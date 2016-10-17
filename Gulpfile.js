@@ -17,7 +17,7 @@ var browserSync = require('browser-sync');
 var paths = {
     assets: "assets",
     fonts: "source/fonts/*.*",
-    html: "source/templates/slides/*.*",
+    html: "source/templates/",
     js: "source/javascripts/**/*.js",
     jsEntry: "source/javascripts/main.js",
     root: "./",
@@ -25,7 +25,7 @@ var paths = {
 };
 
 gulp.task("html", function () {
-    return gulp.src(['source/templates/start.html', paths.html, 'source/templates/end.html'])
+    return gulp.src([paths.html + 'start.html', paths.html + 'slides/*.*', paths.html + 'end.html'])
         .pipe(concat('index.html'))
         .pipe(gulp.dest(paths.root))
         .pipe(connect.reload())
@@ -82,7 +82,7 @@ gulp.task("connect", function () {
 
     gulp.watch(paths.js, ["watch-js"]);
     gulp.watch(paths.scss, ["watch-sass"]);
-    gulp.watch(paths.html, ["watch-html"])
+    gulp.watch(paths.html + "**/*", ["watch-html"])
 });
 
 gulp.task('watch-js', ['js'], browserSync.reload);
