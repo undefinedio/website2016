@@ -1,7 +1,9 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
-
 import loadDataSrcSVG from './helpers/svg'
+
+import './helpers/events';
+import Sound from './classes/sound';
 
 class App {
     constructor() {
@@ -24,6 +26,8 @@ class App {
             dependencies: []
         });
 
+        this.sound = new Sound();
+
         loadDataSrcSVG();
 
         this.eventHandlers();
@@ -32,6 +36,26 @@ class App {
     eventHandlers() {
         this.$slides.on('click', ()=> {
             Reveal.right();
+        });
+
+        Reveal.addEventListener('slidechanged', (event) => {
+            var $el = $(event.currentSlide);
+
+            var fireEvent = $el.data('event');
+            var playSound = $el.data('play');
+            var stopSound = $el.data('stop');
+
+            if (fireEvent) {
+                global.d.dispatch(fireEvent);
+            }
+
+            if (playSound) {
+                this.sound.play(playSound);
+            }
+
+            if (stopSound) {
+                this.sound.stop(playSound);
+            }
         });
     }
 }

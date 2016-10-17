@@ -6,6 +6,7 @@ var data = require("gulp-data");
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var gulp = require("gulp");
+var audiosprite = require('gulp-audiosprite');
 var plumber = require("gulp-plumber");
 var rename = require("gulp-rename");
 var concat = require('gulp-concat');
@@ -17,6 +18,7 @@ var PATHS = {
     assets: "dist/assets",
     dist: "dist",
     fonts: "source/fonts/*.*",
+    sounds: "source/sounds/*.*",
     html: "source/templates/",
     js: "source/javascripts/**/*.js",
     jsEntry: "source/javascripts/main.js",
@@ -59,6 +61,16 @@ gulp.task("sass", function () {
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(gulp.dest(PATHS.assets))
+});
+
+gulp.task("audio", function () {
+    gulp.src(PATHS.sounds)
+        .pipe(audiosprite({
+            format: 'howler',
+            path: "assets/sounds",
+            loop: "taalunie"
+        }))
+        .pipe(gulp.dest(PATHS.assets + '/sounds'));
 });
 
 gulp.task("fonts", function () {
