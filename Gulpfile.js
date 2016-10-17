@@ -6,7 +6,10 @@ var data = require("gulp-data");
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var gulp = require("gulp");
+var newer = require('gulp-newer');
 var plumber = require("gulp-plumber");
+var imagemin = require("gulp-imagemin");
+var pngquant = require("imagemin-pngquant");
 var rename = require("gulp-rename");
 var concat = require('gulp-concat');
 var buffer = require('gulp-buffer');
@@ -14,9 +17,10 @@ var sass = require("gulp-sass");
 var browserSync = require('browser-sync');
 
 var PATHS = {
-    assets: "dist/assets",
+    assets: "dist/assets/",
     dist: "dist",
     fonts: "source/fonts/*.*",
+    images: "source/images/",
     html: "source/templates/",
     js: "source/javascripts/**/*.js",
     jsEntry: "source/javascripts/main.js",
@@ -61,6 +65,17 @@ gulp.task("sass", function () {
         .pipe(gulp.dest(PATHS.assets))
 });
 
+gulp.task("images", function () {
+    return gulp.src(PATHS.images + ['**/*.*'])
+        .pipe(newer(PATHS.assets + 'images'))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(PATHS.assets + 'images'))
+});
+
 gulp.task("fonts", function () {
     return gulp.src(PATHS.fonts)
         .pipe(gulp.dest(PATHS.assets))
@@ -80,11 +95,13 @@ gulp.task("connect", function () {
     gulp.watch(PATHS.js, ["watch-js"]);
     gulp.watch(PATHS.scss, ["watch-sass"]);
     gulp.watch(PATHS.html + "**/*", ["watch-html"])
+    gulp.watch(PATHS.images + "**/*", ["watch-images"])
 });
 
 gulp.task('watch-js', ['js'], browserSync.reload);
 gulp.task('watch-sass', ['sass'], browserSync.reload);
 gulp.task('watch-html', ['html'], browserSync.reload);
+gulp.task('watch-images', ['images'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
 gulp.task("build", ["js", "sass", "fonts", "html"]);
