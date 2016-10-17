@@ -6,7 +6,9 @@
     "private": true,
     "dependencies": {
         "babel-core": "^6.17.0",
+        "howler": "1.1.*",
         "jquery": "^3.1.1",
+        "evently": "^2.3.1",
         "reveal.js": "^3.1.0"
     },
     "author": "Undefined",
@@ -20,6 +22,7 @@
         "imagemin-pngquant": "~5.0",
         "browserify": "^13.1.0",
         "gulp": "^3.8.11",
+        "gulp-audiosprite": "^1.0.3",
         "gulp-autoprefixer": "^3.1.1",
         "gulp-browserify": "^0.5.1",
         "gulp-newer": "^1.2.0",

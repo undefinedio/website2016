@@ -6,6 +6,7 @@ var data = require("gulp-data");
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var gulp = require("gulp");
+var audiosprite = require('gulp-audiosprite');
 var newer = require('gulp-newer');
 var plumber = require("gulp-plumber");
 var imagemin = require("gulp-imagemin");
@@ -20,6 +21,7 @@ var PATHS = {
     assets: "dist/assets/",
     dist: "dist",
     fonts: "source/fonts/*.*",
+    sounds: "source/sounds/*.*",
     images: "source/images/",
     html: "source/templates/",
     js: "source/javascripts/**/*.js",
@@ -65,6 +67,16 @@ gulp.task("sass", function () {
         .pipe(gulp.dest(PATHS.assets))
 });
 
+gulp.task("audio", function () {
+    gulp.src(PATHS.sounds)
+        .pipe(audiosprite({
+            format: 'howler',
+            path: "assets/sounds",
+            loop: "taalunie"
+        }))
+        .pipe(gulp.dest(PATHS.assets + '/sounds'));
+});
+
 gulp.task("images", function () {
     return gulp.src(PATHS.images + ['**/*.*'])
         .pipe(newer(PATHS.assets + 'images'))
@@ -87,15 +99,15 @@ gulp.task("connect", function () {
             baseDir: "./dist"
         },
         notifications: false,
-        open: false // Change it to true if you wish to allow Browsersync to open a browser window.
+        open: false
     };
 
     browserSync(options);
 
     gulp.watch(PATHS.js, ["watch-js"]);
     gulp.watch(PATHS.scss, ["watch-sass"]);
-    gulp.watch(PATHS.html + "**/*", ["watch-html"])
-    gulp.watch(PATHS.images + "**/*", ["watch-images"])
+    gulp.watch(PATHS.html + "**/*", ["watch-html"]);
+    gulp.watch(PATHS.images + "**/*", ["watch-images"]);
 });
 
 gulp.task('watch-js', ['js'], browserSync.reload);
