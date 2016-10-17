@@ -3,7 +3,7 @@ import sprite from '../../../dist/assets/sounds/sprite.json';
 
 class Sound {
     constructor() {
-        this.fadeTime = 1500;
+        this.fadeTime = 750;
         this.sound = new Howl(sprite);
     }
 
