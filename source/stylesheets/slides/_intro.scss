@@ -1,0 +1,16 @@
+h1.logo-text {
+    text-transform: uppercase;
+    font-size: 3em;
+    line-height: 1;
+    border: .15em solid #000000;
+    padding: .13em .17em .02em .17em;
+    display: inline-block;
+    color: #000000;
+    font-family: 'Gotham', sans-serif;
+    transition: all .5s ease-in-out;
+    margin: 0;
+
+    &:hover {
+        transform: perspective(7em) rotateY(25deg) rotateX(35deg);
+    }
+}

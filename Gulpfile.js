@@ -9,6 +9,7 @@ var gulp = require("gulp");
 var audiosprite = require('gulp-audiosprite');
 var newer = require('gulp-newer');
 var plumber = require("gulp-plumber");
+var fontgen = require('gulp-fontgen');
 var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
 var rename = require("gulp-rename");
@@ -29,6 +30,13 @@ var PATHS = {
     root: "./",
     scss: "source/stylesheets/**/*.scss"
 };
+
+gulp.task('fonts', function () {
+    return gulp.src(PATHS.fonts)
+        .pipe(fontgen({
+            dest: PATHS.assets + '/fonts'
+        }));
+});
 
 gulp.task("html", function () {
     return gulp.src([PATHS.html + 'start.html', PATHS.html + 'slides/*.*', PATHS.html + 'end.html'])
@@ -86,11 +94,6 @@ gulp.task("images", function () {
             use: [pngquant()]
         }))
         .pipe(gulp.dest(PATHS.assets + 'images'))
-});
-
-gulp.task("fonts", function () {
-    return gulp.src(PATHS.fonts)
-        .pipe(gulp.dest(PATHS.assets))
 });
 
 gulp.task("connect", function () {
