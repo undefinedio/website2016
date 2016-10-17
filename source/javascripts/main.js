@@ -1,4 +1,5 @@
 import 'whatwg-fetch'
+import $ from 'jquery';
 
 import Reveal from 'reveal.js/js/reveal'
 
@@ -7,17 +8,40 @@ import loadPrintCSS   from './helpers/print'
 
 var prefix = 'node_modules/reveal.js/plugin';
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    window.Reveal = Reveal;
-    Reveal.initialize({
-        controls: false,
-        progress: false,
-        history: false,
-        center: true,
-        transition: 'slide',
-        dependencies: []
-    });
+class App {
+    constructor() {
+        window.Reveal = Reveal;
+        this.$slides = $('.js-slides');
 
-    loadDataSrcSVG();
-    loadPrintCSS();
+        Reveal.initialize({
+            controls: false,
+            progress: false,
+            history: false,
+            keyboard: false,
+            center: true,
+            touch: false,
+            loop: true,
+            mouseWheel: false,
+            viewDistance: 3,
+            transition: 'none',
+            hideAddressBar: true,
+            overview: false,
+            dependencies: []
+        });
+
+        loadDataSrcSVG();
+        loadPrintCSS();
+
+        this.eventHandlers();
+    }
+
+    eventHandlers() {
+        this.$slides.on('click', ()=> {
+            Reveal.right();
+        });
+    }
+}
+
+$(document).ready(() => {
+    new App();
 });
