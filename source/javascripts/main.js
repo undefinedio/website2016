@@ -1,12 +1,7 @@
-import 'whatwg-fetch'
 import $ from 'jquery';
-
 import Reveal from 'reveal.js/js/reveal'
 
 import loadDataSrcSVG from './helpers/svg'
-import loadPrintCSS   from './helpers/print'
-
-var prefix = 'node_modules/reveal.js/plugin';
 
 class App {
     constructor() {
@@ -30,7 +25,6 @@ class App {
         });
 
         loadDataSrcSVG();
-        loadPrintCSS();
 
         this.eventHandlers();
     }

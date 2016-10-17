@@ -2,7 +2,6 @@ var autoprefixer = require("gulp-autoprefixer");
 var browserify = require('browserify');
 var babelify = require('babelify');
 var concat = require("gulp-concat");
-var connect = require("gulp-connect");
 var data = require("gulp-data");
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
@@ -14,8 +13,9 @@ var buffer = require('gulp-buffer');
 var sass = require("gulp-sass");
 var browserSync = require('browser-sync');
 
-var paths = {
-    assets: "assets",
+var PATHS = {
+    assets: "dist/assets",
+    dist: "dist",
     fonts: "source/fonts/*.*",
     html: "source/templates/",
     js: "source/javascripts/**/*.js",
@@ -25,16 +25,15 @@ var paths = {
 };
 
 gulp.task("html", function () {
-    return gulp.src([paths.html + 'start.html', paths.html + 'slides/*.*', paths.html + 'end.html'])
+    return gulp.src([PATHS.html + 'start.html', PATHS.html + 'slides/*.*', PATHS.html + 'end.html'])
         .pipe(concat('index.html'))
-        .pipe(gulp.dest(paths.root))
-        .pipe(connect.reload())
+        .pipe(gulp.dest(PATHS.dist))
 });
 
 gulp.task("js", function () {
     return browserify({
-        paths: [paths.js],
-        entries: paths.jsEntry,
+        paths: [PATHS.js],
+        entries: PATHS.jsEntry,
         debug: true,
         transform: [
             [
@@ -51,28 +50,26 @@ gulp.task("js", function () {
         })
         .pipe(source('main.js'))
         .pipe(buffer())
-        .pipe(gulp.dest(paths.assets))
+        .pipe(gulp.dest(PATHS.assets))
 });
 
 gulp.task("sass", function () {
-    return gulp.src(paths.scss)
+    return gulp.src(PATHS.scss)
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(gulp.dest(paths.assets))
-        .pipe(connect.reload())
+        .pipe(gulp.dest(PATHS.assets))
 });
 
 gulp.task("fonts", function () {
-    return gulp.src(paths.fonts)
-        .pipe(gulp.dest(paths.assets))
-        .pipe(connect.reload())
+    return gulp.src(PATHS.fonts)
+        .pipe(gulp.dest(PATHS.assets))
 });
 
 gulp.task("connect", function () {
     var options = {
         server: {
-            baseDir: "./"
+            baseDir: "./dist"
         },
         notifications: false,
         open: false // Change it to true if you wish to allow Browsersync to open a browser window.
@@ -80,9 +77,9 @@ gulp.task("connect", function () {
 
     browserSync(options);
 
-    gulp.watch(paths.js, ["watch-js"]);
-    gulp.watch(paths.scss, ["watch-sass"]);
-    gulp.watch(paths.html + "**/*", ["watch-html"])
+    gulp.watch(PATHS.js, ["watch-js"]);
+    gulp.watch(PATHS.scss, ["watch-sass"]);
+    gulp.watch(PATHS.html + "**/*", ["watch-html"])
 });
 
 gulp.task('watch-js', ['js'], browserSync.reload);
