@@ -11,3 +11,58 @@ $font-path: 'fonts/';
     font-style: normal;
     font-weight: 700;
 }
+
+@font-face {
+    font-family: "BluuNext";
+    src: url($font-path +"BluuNext-Bold.eot");
+    src: url($font-path +"BluuNext-Bold.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"BluuNext-Bold.woff2") format("woff2"),
+    url($font-path +"BluuNext-Bold.woff") format("woff"),
+    url($font-path +"BluuNext-Bold.ttf") format("ttf"),
+    url($font-path +"BluuNext-Bold.svg#BluuNext-Bold") format("svg");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Wingdings";
+    src: url($font-path +"wingdings.eot");
+    src: url($font-path +"wingdings.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"wingdings.woff2") format("woff2"),
+    url($font-path +"wingdings.woff") format("woff"),
+    url($font-path +"wingdings.ttf") format("ttf"),
+    url($font-path +"wingdings.svg#Wingdings-Regular") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}
+
+.reveal {
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "BluuNext", sans-serif;
+        font-weight: 700;
+    }
+
+    p {
+        font-family: Helvetica, sans-serif;
+    }
+
+    .wingdings {
+        font-family: "Wingdings", sans-serif;
+    }
+
+    .drop-shadow {
+        text-shadow: .1em .1em 0 $white;
+    }
+
+    .color-white {
+        color: $white;
+
+        &.drop-shadow {
+            text-shadow: .1em .1em 0 $text-color;
+        }
+    }
+
+}

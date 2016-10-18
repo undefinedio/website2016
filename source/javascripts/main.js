@@ -35,16 +35,17 @@ class App {
 
     eventHandlers() {
         this.$slides.on('click', ()=> {
+            this.sound.play('click');
             Reveal.right();
         });
 
         Reveal.addEventListener('slidechanged', (event) => {
             let $el = $(event.currentSlide);
 
-            let fireEvent = $el.data('event');
-            let playSound = $el.data('play');
-            let stopSound = $el.data('stop');
-            let bg = $el.data('bg');
+            var fireEvent = $el.data('event');
+            var playSound = $el.data('play');
+            var stopSound = $el.data('stop');
+            var className = $el.data('class');
 
             if (fireEvent) {
                 global.d.dispatch(fireEvent);
@@ -58,14 +59,14 @@ class App {
                 this.sound.stop(playSound);
             }
 
-            if (bg) {
-                this.clearBg();
-                $('.js-bg').addClass(bg)
+            if (className) {
+                this.clearClasses();
+                $('.js-bg').addClass(className);
             }
         });
     }
 
-    clearBg() {
+    clearClasses() {
         $('.js-bg').attr('class', 'bg js-bg');
     }
 }
