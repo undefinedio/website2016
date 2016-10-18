@@ -25,6 +25,7 @@ var PATHS = {
     sounds: "source/sounds/*.*",
     images: "source/images/",
     html: "source/templates/",
+    slides: "source/templates/slides/*.*",
     js: "source/javascripts/**/*.js",
     jsEntry: "source/javascripts/main.js",
     root: "./",
@@ -39,7 +40,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task("html", function () {
-    return gulp.src([PATHS.html + 'start.html', PATHS.html + 'slides/*.*', PATHS.html + 'end.html'])
+    return gulp.src([PATHS.html + 'start.html', PATHS.slides, PATHS.html + 'end.html'])
         .pipe(concat('index.html'))
         .pipe(gulp.dest(PATHS.dist))
 });
