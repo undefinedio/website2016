@@ -39,11 +39,12 @@ class App {
         });
 
         Reveal.addEventListener('slidechanged', (event) => {
-            var $el = $(event.currentSlide);
+            let $el = $(event.currentSlide);
 
-            var fireEvent = $el.data('event');
-            var playSound = $el.data('play');
-            var stopSound = $el.data('stop');
+            let fireEvent = $el.data('event');
+            let playSound = $el.data('play');
+            let stopSound = $el.data('stop');
+            let bg = $el.data('bg');
 
             if (fireEvent) {
                 global.d.dispatch(fireEvent);
@@ -56,7 +57,16 @@ class App {
             if (stopSound) {
                 this.sound.stop(playSound);
             }
+
+            if (bg) {
+                this.clearBg();
+                $('.js-bg').addClass(bg)
+            }
         });
+    }
+
+    clearBg() {
+        $('.js-bg').attr('class', 'bg js-bg');
     }
 }
 
