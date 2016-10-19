@@ -1,0 +1,15 @@
+$small-screen: em(321);
+$medium-screen: em(480);
+$intermedium-screen: em(600);
+$large-screen: em(900);
+$xlarge-screen: em(1140);
+$xxlarge-screen: em(1280);
+$xxxlarge-screen: em(1480);
+
+@include screensize($small-screen, 'small-screen', 321px, yellow);
+@include screensize($medium-screen, 'medium-screen', 480px, gold);
+@include screensize($intermedium-screen, 'intermedium-screen', 600px, #ff9966);
+@include screensize($large-screen, 'large-screen', 900px, #ff6699);
+@include screensize($xlarge-screen, 'xlarge-screen', 1140px, #cc33ff);
+@include screensize($xxlarge-screen, 'xxlarge-screen', 1280px, #6600ff);
+@include screensize($xxxlarge-screen, 'xxxlarge-screen', 1480px, #666699);

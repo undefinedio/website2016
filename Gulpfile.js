@@ -120,4 +120,4 @@ gulp.task('watch-html', ['html'], browserSync.reload);
 gulp.task('watch-images', ['images'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["js", "sass", "fonts", "html"]);
+gulp.task("build", ["audio", "sass", "js", "fonts", "html"]);

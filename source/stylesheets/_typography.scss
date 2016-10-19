@@ -1,0 +1,210 @@
+.reveal {
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "Bagnard", sans-serif;
+        font-weight: 700;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 1.5em;
+
+        &.line {
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -.75em;
+                width: 8em;
+                height: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url(../assets/images/line-black.svg);
+
+                .dark & {
+                    background-image: url(../assets/images/line-red.svg);
+                }
+
+                @include media($large-screen) {
+                    bottom: -.5em;
+                    width: 10em;
+                    height: 8px;
+                }
+            }
+        }
+
+        @include media($medium-screen) {
+            font-size: 2em;
+        }
+
+        @include media($large-screen) {
+            font-size: 3em;
+        }
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-family: "Coupeur Crise", serif;
+    }
+
+    p {
+        font-size: .9em;
+        font-family: "Space Mono", sans-serif;
+        margin: 3em 0;
+        line-height: 1.7;
+
+        @include media($medium-screen) {
+            font-size: 1em;
+        }
+    }
+
+    strong,
+    b {
+        font-weight: bold;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    ol,
+    dl,
+    ul {
+        display: inline-block;
+        text-align: left;
+        margin: 0 0 0 1em;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul {
+        list-style-type: disc;
+
+        ul {
+            list-style-type: square;
+
+            ul {
+                list-style-type: circle;
+            }
+
+            display: block;
+            margin-left: 40px;
+        }
+
+        ol {
+            display: block;
+            margin-left: 40px;
+        }
+    }
+
+    ol {
+        ol,
+        ul {
+            display: block;
+            margin-left: 40px;
+        }
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin-left: 40px;
+    }
+
+    q {
+        quotes: none;
+    }
+
+    blockquote {
+        background: rgba(255, 255, 255, .05);
+        box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+        display: block;
+        font-style: italic;
+        margin: 20px auto;
+        padding: 5px;
+        position: relative;
+        quotes: none;
+        width: 70%;
+
+        p {
+            &:first-child,
+            &:last-child {
+                display: inline-block;
+            }
+        }
+    }
+
+    q {
+        font-style: italic;
+    }
+
+    code {
+        font-family: monospace;
+    }
+
+    pre {
+        display: block;
+        font-family: monospace;
+        font-size: .55em;
+        line-height: 1.2em;
+        margin: 1em auto;
+        padding: .5em;
+        position: relative;
+        text-align: left;
+        width: 90%;
+        word-wrap: break-word;
+
+        code {
+            display: block;
+            padding: 5px;
+            overflow: auto;
+            max-height: 400px;
+            word-wrap: normal;
+            background: #3f3f3f;
+            color: #dcdcdc;
+        }
+    }
+
+    small {
+        display: inline-block;
+        font-size: .6em;
+        line-height: 1.2em;
+        vertical-align: top;
+
+        * {
+            vertical-align: top;
+        }
+    }
+
+    .wingdings {
+        font-family: "Wingdings", sans-serif;
+    }
+
+    .drop-shadow {
+        text-shadow: .1em .1em 0 $white;
+    }
+
+    .color-white {
+        color: $white;
+
+        &.drop-shadow {
+            text-shadow: .1em .1em 0 $text-color;
+        }
+    }
+}
