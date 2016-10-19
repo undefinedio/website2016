@@ -1,3 +1,4 @@
-*
-!.gitignore
-!assets/sounds/*
+index.html
+assets/images
+assets/main.*
+assets/fonts/*.css
