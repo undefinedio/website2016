@@ -112,12 +112,14 @@ gulp.task("connect", function () {
     gulp.watch(PATHS.scss, ["watch-sass"]);
     gulp.watch(PATHS.html + "**/*", ["watch-html"]);
     gulp.watch(PATHS.images + "**/*", ["watch-images"]);
+    gulp.watch(PATHS.fonts + "**/*", ["watch-fonts"]);
 });
 
 gulp.task('watch-js', ['js'], browserSync.reload);
 gulp.task('watch-sass', ['sass'], browserSync.reload);
 gulp.task('watch-html', ['html'], browserSync.reload);
 gulp.task('watch-images', ['images'], browserSync.reload);
+gulp.task('watch-fonts', ['fonts'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["js", "sass", "fonts", "html"]);
+gulp.task("build", ["js", "sass", "html"]);
