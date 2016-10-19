@@ -15,6 +15,20 @@
     }
 
     &.white {
-        background: white;
+        background: $white;
+    }
+
+    &.red {
+        background: $red;
+        color: $black;
+    }
+
+    &.dark {
+        background: $black;
+        color: $red;
+
+        path {
+            fill: $red;
+        }
     }
 }
