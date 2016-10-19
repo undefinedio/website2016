@@ -1,0 +1,19 @@
+{
+  "urls": [
+    "assets/sounds/sprite.ogg",
+    "assets/sounds/sprite.m4a",
+    "assets/sounds/sprite.mp3",
+    "assets/sounds/sprite.ac3"
+  ],
+  "sprite": {
+    "click": [
+      0,
+      2000
+    ],
+    "taalunie": [
+      3000,
+      27428.571428571428,
+      true
+    ]
+  }
+}
