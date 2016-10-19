@@ -9,7 +9,7 @@ var gulp = require("gulp");
 var audiosprite = require('gulp-audiosprite');
 var newer = require('gulp-newer');
 var plumber = require("gulp-plumber");
-var fontgen = require('gulp-fontgen');
+
 var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
 var rename = require("gulp-rename");
@@ -33,6 +33,8 @@ var PATHS = {
 };
 
 gulp.task('fonts', function () {
+    var fontgen = require('gulp-fontgen');
+
     return gulp.src(PATHS.fonts)
         .pipe(fontgen({
             dest: PATHS.assets + '/fonts'
@@ -122,4 +124,4 @@ gulp.task('watch-images', ['images'], browserSync.reload);
 gulp.task('watch-fonts', ['fonts'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["js", "sass", "html"]);
+gulp.task("build", ["js", "sass", "html", "images"]);
