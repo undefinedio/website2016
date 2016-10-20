@@ -9,7 +9,6 @@ var gulp = require("gulp");
 var audiosprite = require('gulp-audiosprite');
 var newer = require('gulp-newer');
 var plumber = require("gulp-plumber");
-
 var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
 var rename = require("gulp-rename");
@@ -124,4 +123,4 @@ gulp.task('watch-images', ['images'], browserSync.reload);
 gulp.task('watch-fonts', ['fonts'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["audio", "sass", "js", "fonts", "html"]);
+gulp.task("build", ["sass", "js", "images", "html"]);
