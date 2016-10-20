@@ -124,4 +124,4 @@ gulp.task('watch-images', ['images'], browserSync.reload);
 gulp.task('watch-fonts', ['fonts'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["js", "sass", "html", "images"]);
+gulp.task("build", ["audio", "sass", "js", "fonts", "html"]);

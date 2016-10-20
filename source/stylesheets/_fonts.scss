@@ -1,68 +1,85 @@
 $font-path: 'fonts/';
 
 @font-face {
-    font-family: "Gotham";
+    font-family: "Bagnard";
+    src: url($font-path +"Bagnard.eot");
+    src: url($font-path +"Bagnard.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"Bagnard.woff2") format("woff2"),
+    url($font-path +"Bagnard.woff") format("woff"),
+    url($font-path +"Bagnard.ttf") format("ttf"),
+    url($font-path +"Bagnard.svg#Bagnard-Regular") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Gotham Bold";
     src: url($font-path +"gotham-bold.eot");
     src: url($font-path +"gotham-bold.eot?#iefix") format("embedded-opentype"),
     url($font-path +"gotham-bold.woff2") format("woff2"),
     url($font-path +"gotham-bold.woff") format("woff"),
     url($font-path +"gotham-bold.ttf") format("ttf"),
-    url($font-path +"gotham-bold.svg#GothamBold") format("svg");
+    url($font-path +"gotham-bold.svg#gotham-bold") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url($font-path +"SpaceMono-Regular.eot");
+    src: url($font-path +"SpaceMono-Regular.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"SpaceMono-Regular.woff2") format("woff2"),
+    url($font-path +"SpaceMono-Regular.woff") format("woff"),
+    url($font-path +"SpaceMono-Regular.ttf") format("ttf"),
+    url($font-path +"SpaceMono-Regular.svg#SpaceMono-Regular") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url($font-path +"SpaceMono-Bold.eot");
+    src: url($font-path +"SpaceMono-Bold.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"SpaceMono-Bold.woff2") format("woff2"),
+    url($font-path +"SpaceMono-Bold.woff") format("woff"),
+    url($font-path +"SpaceMono-Bold.ttf") format("ttf"),
+    url($font-path +"SpaceMono-Bold.svg#SpaceMono-Bold") format("svg");
     font-style: normal;
     font-weight: 700;
 }
 
 @font-face {
-    font-family: "BluuNext";
-    src: url($font-path +"BluuNext-Bold.eot");
-    src: url($font-path +"BluuNext-Bold.eot?#iefix") format("embedded-opentype"),
-    url($font-path +"BluuNext-Bold.woff2") format("woff2"),
-    url($font-path +"BluuNext-Bold.woff") format("woff"),
-    url($font-path +"BluuNext-Bold.ttf") format("ttf"),
-    url($font-path +"BluuNext-Bold.svg#BluuNext-Bold") format("svg");
-    font-style: normal;
+    font-family: "Space Mono";
+    src: url($font-path +"SpaceMono-Italic.eot");
+    src: url($font-path +"SpaceMono-Italic.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"SpaceMono-Italic.woff2") format("woff2"),
+    url($font-path +"SpaceMono-Italic.woff") format("woff"),
+    url($font-path +"SpaceMono-Italic.ttf") format("ttf"),
+    url($font-path +"SpaceMono-Italic.svg#SpaceMono-Italic") format("svg");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Space Mono";
+    src: url($font-path +"SpaceMono-BoldItalic.eot");
+    src: url($font-path +"SpaceMono-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"SpaceMono-BoldItalic.woff2") format("woff2"),
+    url($font-path +"SpaceMono-BoldItalic.woff") format("woff"),
+    url($font-path +"SpaceMono-BoldItalic.ttf") format("ttf"),
+    url($font-path +"SpaceMono-BoldItalic.svg#SpaceMono-BoldItalic") format("svg");
+    font-style: italic;
     font-weight: 700;
 }
 
 @font-face {
-    font-family: "Wingdings";
-    src: url($font-path +"wingdings.eot");
-    src: url($font-path +"wingdings.eot?#iefix") format("embedded-opentype"),
-    url($font-path +"wingdings.woff2") format("woff2"),
-    url($font-path +"wingdings.woff") format("woff"),
-    url($font-path +"wingdings.ttf") format("ttf"),
-    url($font-path +"wingdings.svg#Wingdings-Regular") format("svg");
+    font-family: "Coupeur Crise";
+    src: url($font-path +"CoupeurCrise-Medium.eot");
+    src: url($font-path +"CoupeurCrise-Medium.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"CoupeurCrise-Medium.woff2") format("woff2"),
+    url($font-path +"CoupeurCrise-Medium.woff") format("woff"),
+    url($font-path +"CoupeurCrise-Medium.ttf") format("ttf"),
+    url($font-path +"CoupeurCrise-Medium.svg#CoupeurCrise-Medium") format("svg");
     font-style: normal;
-    font-weight: 300;
-}
-
-.reveal {
-    h1,
-    h2,
-    h3,
-    h4 {
-        font-family: "BluuNext", sans-serif;
-        font-weight: 700;
-    }
-
-    p {
-        font-family: Helvetica, sans-serif;
-    }
-
-    .wingdings {
-        font-family: "Wingdings", sans-serif;
-    }
-
-    .drop-shadow {
-        text-shadow: .1em .1em 0 $white;
-    }
-
-    .color-white {
-        color: $white;
-
-        &.drop-shadow {
-            text-shadow: .1em .1em 0 $text-color;
-        }
-    }
-
+    font-weight: 400;
 }

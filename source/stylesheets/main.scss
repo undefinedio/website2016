@@ -1,7 +1,14 @@
 @import "./node_modules/reveal.js/css/reveal.scss";
 @import "variables";
 @import "fonts";
+@import "mixins";
+@import "breakpoints";
+
+@import "reveal";
+
+@import "typography";
 @import "theme";
 @import "backgrounds";
+
 // Slides
 @import "slides/intro";
