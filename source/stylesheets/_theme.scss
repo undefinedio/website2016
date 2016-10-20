@@ -18,4 +18,21 @@ body {
         background-color: $red;
         box-shadow: 0 0 10px rgba(0, 0, 0, .5);
     }
+
+    img {
+        width: 6em;
+        margin-bottom: 1em;
+
+        @include media($intermedium-screen) {
+            width: 8em;
+        }
+
+        @include media($large-screen) {
+            width: 10em;
+        }
+    }
+}
+
+.box-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }

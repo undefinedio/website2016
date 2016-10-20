@@ -10,7 +10,8 @@
         "evently": "^2.3.1",
         "howler": "1.1.*",
         "jquery": "^3.1.1",
-        "reveal.js": "^3.1.0"
+        "reveal.js": "^3.1.0",
+        "gsap": "^1.19.0"
     },
     "author": "Undefined",
     "repository": "git@github.com:undefinedio/website2016.git",
