@@ -83,3 +83,15 @@ $font-path: 'fonts/';
     font-style: normal;
     font-weight: 400;
 }
+
+@font-face {
+    font-family: "Wingdings";
+    src: url($font-path +"wingdings.eot");
+    src: url($font-path +"wingdings.eot?#iefix") format("embedded-opentype"),
+    url($font-path +"wingdings.woff2") format("woff2"),
+    url($font-path +"wingdings.woff") format("woff"),
+    url($font-path +"wingdings.ttf") format("ttf"),
+    url($font-path +"wingdings.svg#wingdings") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
