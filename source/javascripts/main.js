@@ -4,6 +4,7 @@ import loadDataSrcSVG from './helpers/svg'
 
 import './helpers/events';
 import Sound from './classes/sound';
+import Game from './canvas/Game';
 
 class App {
     constructor() {
@@ -13,6 +14,7 @@ class App {
         this.initReveal();
 
         loadDataSrcSVG();
+        new Game();
 
         this.eventHandlers();
     }
@@ -54,10 +56,11 @@ class App {
     eventHandlers() {
         this.$slides.on('click', ()=> {
             this.sound.play('click');
+            global.d.dispatch("startStage=Idle");
             Reveal.right();
         });
 
-        Reveal.addEventListener('ready', (event)  => {
+        Reveal.addEventListener('ready', (event) => {
             this.doSlide();
         });
 
@@ -75,7 +78,11 @@ class App {
         var className = $el.data('class');
 
         if (fireEvent) {
-            global.d.dispatch(fireEvent);
+            if (typeof fireEvent == 'object' && fireEvent.startStage) {
+                global.d.dispatch("startStage", fireEvent.startStage);
+            } else {
+                global.d.dispatch(fireEvent);
+            }
         }
 
         if (playSound) {
