@@ -1,0 +1,29 @@
+.reveal .slides > section.case {
+    .tags {
+        margin: 0;
+
+        li {
+            text-decoration: underline;
+            display: inline-block;
+            list-style: none;
+            margin-right: 1em;
+            color: $link-color;
+        }
+    }
+}
+
+.case-image {
+    img {
+        width: 100%;
+        margin-bottom: 0;
+
+        @include media($intermedium-screen) {
+            width: 100%;
+        }
+
+        @include media($large-screen) {
+            max-width: 1000px;
+            width: 95%;
+        }
+    }
+}

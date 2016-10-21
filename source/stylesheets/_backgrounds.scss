@@ -27,4 +27,23 @@
         background: $black;
         color: $red;
     }
+
+    &.lolology {
+        background: linear-gradient(270deg, #B3F6D8, #E4FF7C, #f5d0ff, #4ce924, #fff0a7);
+        background-size: 600% 600%;
+        animation: gradient 30s ease infinite;
+        color: $black;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 51%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
