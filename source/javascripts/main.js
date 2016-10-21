@@ -73,15 +73,18 @@ class App {
         let $el = $(event.currentSlide);
 
         var fireEvent = $el.data('event');
+        var startCanvasStage = $el.data('canvas');
         var playSound = $el.data('play');
         var stopSound = $el.data('stop');
         var className = $el.data('class');
 
         if (fireEvent) {
-            if (typeof fireEvent == 'object' && fireEvent.startStage) {
-                global.d.dispatch("startStage", fireEvent.startStage);
-            } else {
-                global.d.dispatch(fireEvent);
+            global.d.dispatch(fireEvent);
+        }
+
+        if (startCanvasStage) {
+            if (typeof startCanvasStage == 'object' && startCanvasStage.startStage) {
+                global.d.dispatch("startStage", startCanvasStage.startStage);
             }
         }
 
