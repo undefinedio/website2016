@@ -17,14 +17,17 @@ class MouseTrail1 extends CustomState {
         this.target = new Phaser.Point();
         this.letterArray = this.sentence.split('');
 
-        this.clientX = this.game.world.width / 2;
-        this.clientY = this.game.world.height / 2;
+        this.clientX = this.game.world.width;
+        this.clientY = 0;
     }
 
     create() {
-        $('body').on('mousemove', this.mouseMove.bind(this));
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.snakeGroup = this.game.add.group();
+        if (this.snakeGroup.children.length == 0) {
+            this.drawSnake();
+        }
+        $('body').on('mousemove', this.mouseMove.bind(this));
         console.log(this.snakeHead);
     }
 
@@ -48,17 +51,13 @@ class MouseTrail1 extends CustomState {
 
         //  Init snakePath array
         for (let i = 0; i <= this.numSnakeSections * this.snakeSpacer; i++) {
-            this.snakePath[i] = new Phaser.Point(this.clientX, this.clientY);
+            this.snakePath[i] = new Phaser.Point(this.clientX + (4 * i * this.snakeSpacer), this.clientY);
         }
     }
 
     mouseMove(e) {
         this.clientX = e.pageX * 2;
         this.clientY = e.pageY * 2;
-
-        if (this.snakeGroup.children.length == 0) {
-            this.drawSnake();
-        }
     }
 
     update() {
@@ -101,7 +100,9 @@ class MouseTrail1 extends CustomState {
 
     shutdown() {
         this.snakeGroup.destroy(true);
-        this.snakeHead.destroy();
+        if (this.snakeHead) {
+            this.snakeHead.destroy();
+        }
         $('body').off('mousemove', this.mouseMove.bind(this));
     }
 
