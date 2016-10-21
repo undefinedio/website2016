@@ -28,7 +28,6 @@ class MouseTrail1 extends CustomState {
             this.drawSnake();
         }
         $('body').on('mousemove', this.mouseMove.bind(this));
-        console.log(this.snakeHead);
     }
 
     drawSnake() {

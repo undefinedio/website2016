@@ -3,6 +3,7 @@ import Preload from './states/Preload';
 import IdleStateListener from './states/IdleStateListener';
 import MouseTrail1 from './states/MouseTrail1';
 import WindowError from './states/WindowError';
+import ColorReveal from './states/ColorReveal';
 
 var pjson = require('../../../package.json');
 
@@ -18,6 +19,7 @@ class Game extends Phaser.Game {
         this.state.add('IdleStateListener', IdleStateListener, false);
         this.state.add('MouseTrail1', MouseTrail1, false);
         this.state.add('WindowError', WindowError, false);
+        this.state.add('ColorReveal', ColorReveal, false);
 
         this.state.start('Boot');
 
