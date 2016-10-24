@@ -6,6 +6,9 @@ import './helpers/events';
 import Sound from './classes/sound';
 import Game from './canvas/Game';
 
+//import slide specific javascript
+import './slides/lolology.js';
+
 class App {
     constructor() {
         this.env = this.getEnv();
@@ -45,8 +48,8 @@ class App {
             hideAddressBar: true,
             overview: false,
             dependencies: [],
-            width: "95%",
-            height: "95%",
+            width: "100%",
+            height: "100%",
             margin: 0,
             minScale: 1,
             maxScale: 1

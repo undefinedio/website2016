@@ -27,4 +27,23 @@
         background: $black;
         color: $red;
     }
+
+    &.lolology {
+        background-color: #B3F6D8;
+        background-size: 100px;
+        background-origin: content-box, padding-box;
+        color: $black;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 51%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
