@@ -17,15 +17,16 @@ class MouseTrail1 extends CustomState {
         this.target = new Phaser.Point();
         this.letterArray = this.sentence.split('');
 
-        this.clientX = this.game.world.width;
-        this.clientY = 0;
     }
 
     create() {
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.clientX = this.game.world.width;
+        this.clientY = 0;
+
+        this.firstMove = true;
+
         this.snakeGroup = this.game.add.group();
         if (this.snakeGroup.children.length == 0) {
-            // this.drawSnake();
             this.drawChain();
         }
         $('body').on('mousemove', this.mouseMove.bind(this));
@@ -37,7 +38,7 @@ class MouseTrail1 extends CustomState {
         this.path = [];
 
         for (var i = 0; i < this.points; i++) {
-            this.path.push(this.game.add.text(i * this.distance, 0, this.letterArray[i], this.textStyle));
+            this.path.push(this.game.add.text(this.clientX + i * this.distance, this.clientY + 0, this.letterArray[i], this.textStyle));
         }
 
     }
@@ -48,6 +49,18 @@ class MouseTrail1 extends CustomState {
 
         this.path[0].x = this.clientX;
         this.path[0].y = this.clientY;
+
+    }
+
+    update() {
+        if (this.firstMove) {
+            this.game.add.tween(this.path[0]).to({
+                x: this.game.world.width / 2,
+                y: this.game.world.height /2
+            }, 2000, Phaser.Easing.Power2, true);
+
+            this.firstMove = false;
+        }
 
         for (var i = 0; i < this.points - 1; i++) {
             var segment = this.path[i];
