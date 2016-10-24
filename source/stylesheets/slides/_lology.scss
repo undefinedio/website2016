@@ -19,13 +19,13 @@
         margin: 0 auto 2em;
 
         @include media($intermedium-screen) {
-            width: 20em;
-            height: 10em;
+            width: 30em;
+            height: 18em;
         }
 
         @include media($large-screen) {
-            width: 25em;
-            height: 12em;
+            width: 35em;
+            height: 20em;
         }
     }
 

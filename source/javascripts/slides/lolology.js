@@ -3,77 +3,66 @@ import $ from 'jquery';
 class Lolology {
     constructor() {
         let that = this;
-
         this.images = [];
 
-        $(function () {
-            setTimeout(function () {
-                that.preloadImages();
-            }, 0);
-        });
+        that.preloadImages();
 
         d.on("startLolology", ()=> {
             that.showGif();
-            //that.gradientAnimation();
         });
 
         d.on("endLolology", () => {
             clearInterval(that.timer);
-
+            $('body').css('background-image', 'none');
             $('.js-random-gif').hide();
-        })
+        });
     }
 
     preloadImages() {
-        $('.js-random-gif').each((i, gif) => {
-            let that = this;
+        this.totalRandomGifs = 5;
+        var that = this;
 
-            $.get('https://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=weird')
-                .then((res) => {
-                    $(gif).css('background-image', 'url(' + res.data.image_original_url + ')');
-                    that.images[i] = res.data.image_original_url;
-                });
-        });
+        for (var i = 0; i < this.totalRandomGifs; i++) {
+            (function (i) {
+                $.get('//api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=dancing')
+                    .then((res) => {
+                        that.images[i] = res.data.image_original_url;
+                    });
+            })(i);
+        }
     }
 
     showGif() {
         let i = 0,
+            j = 1,
+            that = this,
             $randomGif = $('.js-random-gif'),
-            randomGifLength = $randomGif.length,
-            $prevGif = $randomGif.eq(0),
-            $bg = $('.js-bg.lolology'),
-            that = this;
+            $prevGif = $randomGif.eq(0);
+
+        $('.js-bg-random-gifs').css('background-image', 'url(' + that.images[0] + ')');
+        $randomGif.eq(0).css('background-image', 'url(' + that.images[1] + ')');
 
         this.timer = setInterval(function () {
             $prevGif.hide();
 
-            $randomGif.eq(i).show();
+            $('.js-bg-random-gifs').css('background-image', 'url(' + that.images[i] + ')');
+            $randomGif.eq(j).css('background-image', 'url(' + that.images[j] + ')');
 
-            $prevGif = $randomGif.eq(i);
+            $randomGif.eq(j).show();
+
+            $prevGif = $randomGif.eq(j);
 
             i++;
+            j++;
 
-            if (i >= randomGifLength) {
+            if (i >= that.totalRandomGifs) {
                 i = 0;
             }
-        }, 1000);
-    }
 
-    gradientAnimation() {
-        let blendAmount = 70,
-            delay = -10,
-            windowWidth = window.innerWidth,
-            $bg = $(".backgrounds .lolology");
-
-        $(document).on('mousemove', function (e) {
-            var mouseX = Math.round(e.pageX / windowWidth * 100 - delay),
-                col1 = mouseX - blendAmount,
-                col2 = mouseX + blendAmount;
-
-            $bg.css({
-                "background": "linear-gradient(to right, #B3F6D8 " + col1 + "%,#E4FF7C " + col2 + "%)"
-            });
-        });
+            if (j >= that.totalRandomGifs) {
+                j = 0;
+            }
+        }, 2500);
     }
 }
 

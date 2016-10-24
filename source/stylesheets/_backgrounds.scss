@@ -29,9 +29,9 @@
     }
 
     &.lolology {
-        background: linear-gradient(270deg, #B3F6D8, #E4FF7C, #f5d0ff, #4ce924, #fff0a7);
-        background-size: 600% 600%;
-        animation: gradient 30s ease infinite;
+        background-color: #B3F6D8;
+        background-size: 100px;
+        background-origin: content-box, padding-box;
         color: $black;
     }
 }
