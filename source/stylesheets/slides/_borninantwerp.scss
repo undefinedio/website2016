@@ -1,0 +1,29 @@
+.reveal .slides > section.borninantwerp {
+    .title-case {
+        display: block;
+        width: 12em;
+        margin: 0 auto 1em;
+
+        @include media($intermedium-screen) {
+            width: 13em;
+        }
+
+        @include media($large-screen) {
+            width: 17em;
+        }
+    }
+
+    .content-center {
+        color: $white;
+    }
+
+    .tags {
+        li {
+            color: $white;
+        }
+    }
+
+    .client {
+        color: $white;
+    }
+}

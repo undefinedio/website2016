@@ -13,13 +13,13 @@ class Lolology {
 
         d.on("endLolology", () => {
             clearInterval(that.timer);
-            $('body').css('background-image', 'none');
+
             $('.js-random-gif').hide();
         });
     }
 
     preloadImages() {
-        this.totalRandomGifs = 5;
+        this.totalRandomGifs = 9;
         var that = this;
 
         for (var i = 0; i < this.totalRandomGifs; i++) {
@@ -39,30 +39,24 @@ class Lolology {
             $randomGif = $('.js-random-gif'),
             $prevGif = $randomGif.eq(0);
 
-        $('.js-bg-random-gifs').css('background-image', 'url(' + that.images[0] + ')');
         $randomGif.eq(0).css('background-image', 'url(' + that.images[1] + ')');
 
         this.timer = setInterval(function () {
             $prevGif.hide();
 
-            $('.js-bg-random-gifs').css('background-image', 'url(' + that.images[i] + ')');
             $randomGif.eq(j).css('background-image', 'url(' + that.images[j] + ')');
 
             $randomGif.eq(j).show();
 
             $prevGif = $randomGif.eq(j);
 
-            i++;
             j++;
 
-            if (i >= that.totalRandomGifs) {
-                i = 0;
-            }
 
             if (j >= that.totalRandomGifs) {
                 j = 0;
             }
-        }, 2500);
+        }, 100);
     }
 }
 

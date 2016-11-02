@@ -1,14 +1,36 @@
 .reveal .slides > section.case {
+    .title-case {
+        width: 15em;
+        margin-bottom: 1em;
+
+        @include media($intermedium-screen) {
+            width: 25em;
+        }
+
+        @include media($large-screen) {
+            width: 35em;
+        }
+    }
+
     .tags {
         margin: 0;
+        text-shadow: none;
 
         li {
+            font-size: 1.25em;
             text-decoration: underline;
             display: inline-block;
             list-style: none;
             margin-right: 1em;
             color: $link-color;
         }
+    }
+
+    .client {
+        color: $link-color;
+        text-decoration: underline;
+        font-family: 'Space Mono';
+        text-shadow: none;
     }
 }
 
