@@ -2,6 +2,7 @@ import Boot from './states/Boot';
 import Preload from './states/Preload';
 import IdleStateListener from './states/IdleStateListener';
 import MouseTrail1 from './states/MouseTrail1';
+import MouseTrail2 from './states/MouseTrail2';
 import WindowError from './states/WindowError';
 import ColorReveal from './states/ColorReveal';
 
@@ -18,6 +19,7 @@ class Game extends Phaser.Game {
         this.state.add('Preload', Preload, false);
         this.state.add('IdleStateListener', IdleStateListener, false);
         this.state.add('MouseTrail1', MouseTrail1, false);
+        this.state.add('MouseTrail2', MouseTrail2, false);
         this.state.add('WindowError', WindowError, false);
         this.state.add('ColorReveal', ColorReveal, false);
 
