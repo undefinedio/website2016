@@ -34,7 +34,7 @@ class MouseTrail1 extends CustomState {
 
     drawChain() {
         this.points = this.letterArray.length;
-        this.distance = 25;
+        this.distance = 30;
         this.path = [];
 
         for (var i = 0; i < this.points; i++) {

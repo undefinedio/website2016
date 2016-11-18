@@ -15,20 +15,23 @@ body {
         margin: 0 auto;
         max-width: 500px;
         padding: 2em;
-        background-color: $red;
+        background-color: $black;
         box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        color: $white;
     }
 
     img {
         width: 6em;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
+        max-width: 480px;
+        max-height: 480px;
 
         @include media($intermedium-screen) {
             width: 8em;
         }
 
         @include media($large-screen) {
-            width: 12em;
+            width: 14em;
         }
     }
 }
