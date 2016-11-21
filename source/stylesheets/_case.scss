@@ -1,7 +1,24 @@
 .reveal .slides > section.case {
     &.wenneker {
         .content-center {
-            max-width: 960px;
+            max-width: 600px;
+        }
+    }
+
+    &.born-in-antwerp {
+        img {
+            width: 6em;
+            margin-bottom: 2em;
+            max-width: 480px;
+            max-height: 480px;
+
+            @include media($intermedium-screen) {
+                width: 8em;
+            }
+
+            @include media($large-screen) {
+                width: 8em;
+            }
         }
     }
 
