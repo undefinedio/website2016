@@ -1,13 +1,10 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
-import loadDataSrcSVG from './helpers/svg'
+//import loadDataSrcSVG from './helpers/svg'
 
 import './helpers/events';
 import Sound from './classes/sound';
 import Game from './canvas/Game';
-
-//import slide specific javascript
-import './slides/lolology.js';
 
 class App {
     constructor() {
