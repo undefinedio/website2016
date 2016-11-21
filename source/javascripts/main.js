@@ -5,7 +5,6 @@ import loadDataSrcSVG from './helpers/svg'
 import './helpers/events';
 import Sound from './classes/sound';
 import Game from './canvas/Game';
-import throttle from 'throttle-debounce/throttle';
 
 //import slide specific javascript
 import './slides/lolology.js';
@@ -59,8 +58,6 @@ class App {
 
     eventHandlers() {
         this.$slides.on('click', (e)=> {
-            console.log($(e.originalEvent.srcElement));
-
             if (!$(e.originalEvent.srcElement).hasClass('js-link')) {
                 this.sound.play('click');
                 global.d.dispatch("startStage=Idle");
@@ -103,6 +100,7 @@ class App {
         }
 
         if (playSound) {
+            console.log(playSound);
             this.sound.play(playSound);
         }
 

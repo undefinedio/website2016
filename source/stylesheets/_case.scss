@@ -29,8 +29,12 @@
             text-decoration: underline;
             display: inline-block;
             list-style: none;
-            margin-right: 1em;
+            margin-left: 1em;
             color: $link-color;
+
+            &:first-child {
+                margin-left: 0;
+            }
         }
     }
 }
