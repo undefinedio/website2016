@@ -1,0 +1,48 @@
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#info .top {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+#info a {
+    color: #6666ff;
+    background-color: #40a040;
+}
+
+#info a:hover {
+    text-decoration: underline;
+}
+
+#info .bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    padding: 5px;
+}
+
+.centerlogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    user-select: none;
+    z-index: 3;
+}
+
+.moon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(99.7%, -180%);
+    width: 250px;
+    z-index: 1;
+}

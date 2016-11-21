@@ -10,6 +10,7 @@
 @import "theme";
 @import "backgrounds";
 @import "canvas";
+@import "three";
 @import "vendor/devices";
 
 @import "case";
@@ -17,3 +18,4 @@
 // Slides
 @import "slides/intro";
 @import "slides/lology";
+@import "slides/windows-error";
