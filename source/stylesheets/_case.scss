@@ -1,6 +1,8 @@
 .reveal .slides > section.case {
-    .content-center {
-        max-width: 960px;
+    &.wenneker {
+        .content-center {
+            max-width: 960px;
+        }
     }
 
     .tags {
