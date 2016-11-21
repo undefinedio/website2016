@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
-//import loadDataSrcSVG from './helpers/svg'
 
 import './helpers/events';
 import Sound from './classes/sound';
@@ -13,7 +12,6 @@ class App {
         this.sound = new Sound();
         this.initReveal();
 
-        loadDataSrcSVG();
         new Game();
 
         this.eventHandlers();
