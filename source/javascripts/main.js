@@ -58,10 +58,14 @@ class App {
     }
 
     eventHandlers() {
-        this.$slides.on('click', ()=> {
-            this.sound.play('click');
-            global.d.dispatch("startStage=Idle");
-            Reveal.right();
+        this.$slides.on('click', (e)=> {
+            console.log($(e.originalEvent.srcElement));
+
+            if (!$(e.originalEvent.srcElement).hasClass('js-link')) {
+                this.sound.play('click');
+                global.d.dispatch("startStage=Idle");
+                Reveal.right();
+            }
         });
 
         Reveal.addEventListener('ready', (event) => {
