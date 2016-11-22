@@ -61,11 +61,11 @@ class App {
         });
 
         Reveal.addEventListener('ready', (event) => {
-            this.doSlide();
+            this.doSlide(event);
         });
 
         Reveal.addEventListener('slidechanged', (event) => {
-            this.doSlide();
+            this.doSlide(event);
         });
 
         $('body').on('mousemove', e => {
@@ -75,7 +75,7 @@ class App {
 
     }
 
-    doSlide() {
+    doSlide(event) {
         let $el = $(event.currentSlide);
 
         var fireEvent = $el.data('event');
