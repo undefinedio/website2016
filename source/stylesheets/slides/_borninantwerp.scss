@@ -2,7 +2,6 @@
     .title-case {
         display: block;
         width: 12em;
-        margin: 0 auto 1em;
 
         @include media($intermedium-screen) {
             width: 13em;

@@ -1,7 +1,7 @@
 .reveal .slides > section.case {
     .title-case {
         width: 15em;
-        margin-bottom: 1em;
+        margin: 0 auto 3em;
 
         @include media($intermedium-screen) {
             width: 25em;

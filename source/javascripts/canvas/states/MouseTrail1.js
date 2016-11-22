@@ -71,13 +71,13 @@ class MouseTrail1 extends CustomState {
                 /**
                  * If you want the first letter to point at your cursor uncomment this.
                  */
-                    // this.snakeHead.angle = Math.atan2(this.clientY - this.snakeHead.y, this.clientX - this.snakeHead.x) * 180 / Math.PI;
+                // this.snakeHead.angle = Math.atan2(this.clientY - this.snakeHead.y, this.clientX - this.snakeHead.x) * 180 / Math.PI;
                 this.snakeHead.body.velocity.copyFrom(this.game.physics.arcade.velocityFromAngle(Math.atan2(this.clientY - this.snakeHead.y, this.clientX - this.snakeHead.x) * 180 / Math.PI, speed));
 
                 /**
                  * if you want smooth elastic snake uncomment this.
                  */
-                // this.game.physics.arcade.moveToXY(this.snakeHead,this.clientX, this.clientY, speed, 400);
+                    // this.game.physics.arcade.moveToXY(this.snakeHead,this.clientX, this.clientY, speed, 400);
 
                 var part = this.snakePath.pop();
 

@@ -1,0 +1,13 @@
+.undefined-cara {
+    img {
+        width: 100%;
+
+        @include media($intermedium-screen) {
+            width: 100%;
+        }
+
+        @include media($large-screen) {
+            width: 100%;
+        }
+    }
+}

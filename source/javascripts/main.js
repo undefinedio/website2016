@@ -5,6 +5,9 @@ import './helpers/events';
 import Sound from './classes/sound';
 import Game from './canvas/Game';
 
+//import slide specific javascript
+import './slides/lolology.js';
+
 class App {
     constructor() {
         this.env = this.getEnv();

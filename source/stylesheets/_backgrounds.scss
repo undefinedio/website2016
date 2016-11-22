@@ -7,7 +7,8 @@
     z-index: 0;
 
     &.gray {
-        background: gray;
+        background: $gray;
+        color: $red;
     }
 
     &.white {
@@ -36,22 +37,18 @@
 
         &.bg-nico {
             background-image: url("../assets/images/lolology/lolology-nico.png");
-            background-color: #ff4b4b;
         }
 
         &.bg-troll {
             background-image: url("../assets/images/lolology/lolology-troll.png");
-            background-color: #23d7ff;
         }
 
         &.bg-lol {
             background-image: url("../assets/images/lolology/lolology-lol.png");
-            background-color: #d6ffb1;
         }
 
         &.bg-lol-yellow {
             background-image: url("../assets/images/lolology/lolology-lol-yellow.png");
-            background-color: #5b75ff;
         }
     }
 
