@@ -6,12 +6,9 @@
     right: 0;
     z-index: 0;
 
-    &.bart {
-        background: url('../assets/images/bart.gif') white;
-    }
-
     &.gray {
-        background: gray;
+        background: $gray;
+        color: $red;
     }
 
     &.white {
@@ -28,11 +25,36 @@
         color: $red;
     }
 
-    &.lolology {
-        background-color: #B3F6D8;
-        background-size: 100px;
+    &.bg-lolology {
+        background-size: 250px;
         background-origin: content-box, padding-box;
         color: $black;
+        background-color: #6dffbe;
+
+        &.bg-doge {
+            background-image: url("../assets/images/lolology/lolology-doge.png");
+        }
+
+        &.bg-nico {
+            background-image: url("../assets/images/lolology/lolology-nico.png");
+        }
+
+        &.bg-troll {
+            background-image: url("../assets/images/lolology/lolology-troll.png");
+        }
+
+        &.bg-lol {
+            background-image: url("../assets/images/lolology/lolology-lol.png");
+        }
+
+        &.bg-lol-yellow {
+            background-image: url("../assets/images/lolology/lolology-lol-yellow.png");
+        }
+    }
+
+    &.bg-borninantwerp {
+        color: $black;
+        background-color: #0087C4;
     }
 }
 

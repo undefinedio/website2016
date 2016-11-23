@@ -11,6 +11,7 @@ class Boot extends CustomState {
 
     preload() {
         //TODO: load crucial sprites and other stuff here
+        this.game.load.bitmapFont('monoSpace', 'assets/images/bitmapfont/spacemono-regular_regular_48.PNG', 'assets/images/bitmapfont/spacemono-regular_regular_48.fnt');
     }
 
     create() {

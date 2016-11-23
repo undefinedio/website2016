@@ -7,6 +7,7 @@ class MouseTrail1 extends CustomState {
         this.imageUrl = data.image;
         this.imageScale = data.scale;
         this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
         if (data.activateOnHoverElement) {
             this.activateOnHoverElement = $(data.activateOnHoverElement);
         } else {
@@ -19,8 +20,6 @@ class MouseTrail1 extends CustomState {
     }
 
     create() {
-        $('body').on('mousemove', this.mouseMove.bind(this));
-
         if (this.activateOnHoverElement) {
             this.activateOnHoverElement.hover(()=> {
                 this.startDrawing = true;
@@ -33,16 +32,14 @@ class MouseTrail1 extends CustomState {
         this.game.add.sprite(0, 0, this.texture);
     }
 
-    mouseMove(e) {
-        this.clientX = e.pageX * 2;
-        this.clientY = e.pageY * 2;
-
+    update() {
         if (!this.activateOnHoverElement) {
             this.startDrawing = true;
         }
-    }
 
-    update() {
+        this.clientX = global.MOUSE_X * 2;
+        this.clientY = global.MOUSE_Y * 2;
+
         if (this.startDrawing) {
             this.texture.renderXY(this.window, this.clientX, this.clientY);
         }
@@ -52,7 +49,6 @@ class MouseTrail1 extends CustomState {
         this.texture.destroy(true);
         this.window.destroy();
         this.startDrawing = false;
-        $('body').off('mousemove', this.mouseMove.bind(this));
     }
 }
 

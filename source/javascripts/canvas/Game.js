@@ -13,12 +13,10 @@ class Game extends Phaser.Game {
         super(document.getElementById('canvasWrapper').clientWidth * 2, document.getElementById('canvasWrapper').clientHeight * 2, Phaser.AUTO, 'game', null, true);
 
         this.settings = {};
-        this.settings.version = pjson.version;
 
         this.state.add('Boot', Boot, false);
         this.state.add('Preload', Preload, false);
         this.state.add('IdleStateListener', IdleStateListener, false);
-        this.state.add('MouseTrail1', MouseTrail1, false);
         this.state.add('MouseTrail2', MouseTrail2, false);
         this.state.add('WindowError', WindowError, false);
         this.state.add('ColorReveal', ColorReveal, false);

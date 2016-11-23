@@ -40,6 +40,12 @@
                     height: 8px;
                 }
             }
+
+            &.white {
+                &::after {
+                    background-image: url("../assets/images/line-white.svg");
+                }
+            }
         }
 
         @include media($medium-screen) {

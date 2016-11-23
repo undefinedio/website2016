@@ -8,7 +8,7 @@ class ColorReveal extends CustomState {
     }
 
     create() {
-        this.letterArray = "denifednu".split('');
+        this.letterArray = "?".split('');
         this.index = 0;
         this.bmd = this.game.make.bitmapData(this.game.world.width, this.game.world.height);
         this.bmdDest = this.game.make.bitmapData(this.game.width, this.game.height);
@@ -33,7 +33,7 @@ class ColorReveal extends CustomState {
         var i = this.letterArray.length;
         while (i--) {
             this.index = this.game.math.wrapValue(this.index, 1, this.colors.length);
-            this.bmd.text(this.letterArray[i], this.game.world.randomX, this.game.world.randomY, '100px Wingdings', this.colors[this.index].rgba, false);
+            this.bmd.text(this.letterArray[i], this.game.world.randomX, this.game.world.randomY, '50px Space Mono', this.colors[this.index].rgba, false);
         }
     }
 }

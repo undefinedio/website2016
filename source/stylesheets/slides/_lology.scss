@@ -1,18 +1,5 @@
-.lolology {
-    .title-case {
-        width: 15em;
-        margin-bottom: 1em;
-
-        @include media($intermedium-screen) {
-            width: 25em;
-        }
-
-        @include media($large-screen) {
-            width: 35em;
-        }
-    }
-
-    .js-random-gifs{
+.reveal .slides > section.lolology {
+    .js-random-gifs {
         position: relative;
         width: 15em;
         height: 8em;
@@ -24,8 +11,8 @@
         }
 
         @include media($large-screen) {
-            width: 35em;
-            height: 20em;
+            width: 12em;
+            height: 15em;
         }
     }
 
