@@ -1,27 +1,55 @@
-.reveal .mockup {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
+.reveal {
+    .mockup {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
 
-    .screen {
-        position: absolute;
-        top: 6%;
-        left: 13.7%;
-        width: 72.7%;
-        height: 82.1%;
-        background-repeat: no-repeat;
-        background-size: 95%;
-        background-position: center center;
-        max-width: auto;
-
-        img {
+        .screen {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-height: none;
+            top: 6%;
+            left: 13.7%;
+            width: 72.7%;
+            height: 82.1%;
+            background-repeat: no-repeat;
+            background-size: 95%;
+            background-position: center center;
             max-width: none;
-            width: 100%;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-height: none;
+                max-width: none;
+                width: 100%;
+            }
+        }
+    }
+
+    .mockup-iphone {
+        position: relative;
+        max-width: 320px;
+        margin: 0 auto;
+
+        .screen {
+            position: absolute;
+            top: 5.3%;
+            left: 8%;
+            width: 83.7%;
+            height: 88.1%;
+            max-width: none;
+            z-index: -1;
+
+            video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-height: none;
+                max-width: none;
+                width: 100%;
+            }
         }
     }
 }

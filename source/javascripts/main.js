@@ -98,7 +98,6 @@ class App {
         }
 
         if (playSound) {
-            console.log(playSound);
             this.sound.play(playSound);
         }
 

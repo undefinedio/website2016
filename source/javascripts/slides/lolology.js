@@ -39,8 +39,6 @@ class Lolology {
             $randomGif = $('.js-random-gif'),
             $prevGif = $randomGif.eq(0);
 
-        console.log(that.images);
-
         $randomGif.eq(0).css('background-image', 'url(' + that.images[1] + ')');
 
         this.timer = setInterval(function () {
@@ -53,7 +51,6 @@ class Lolology {
             $prevGif = $randomGif.eq(j);
 
             j++;
-
 
             if (j >= that.totalRandomGifs) {
                 j = 0;
