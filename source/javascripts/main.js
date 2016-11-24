@@ -67,12 +67,9 @@ class App {
         });
 
         Reveal.addEventListener('slidechanged', (event) => {
-            console.log(event);
-
             if (!$(event.currentSlide).attr('data-canvas')) {
                 global.d.dispatch("startStage=Idle");
             }
-
             this.doSlide(event);
         });
 

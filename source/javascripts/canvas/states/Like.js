@@ -14,30 +14,29 @@ class Like extends CustomState {
     }
 
     create() {
-
-        console.log('start Like State');
-
         $('body').on('click', this.particleBurst.bind(this));
 
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        this.game.stage.backgroundColor = 0x337799;
 
-        this.emitter = this.game.add.emitter(0, 0, 100);
-        this.emitter.makeParticles('like');
-        this.emitter.gravity = 200;
+        this.emitter = this.game.add.emitter(0, 0, 300);
+        this.emitter.makeParticles('like', undefined, undefined, true, true);
+        this.emitter.setScale(.5, .3, .5, .3, 10000, Phaser.Easing.Quintic.Out);
+        this.emitter.gravity = 100;
+        this.emitter.minParticleSpeed.setTo(-300, -300);
+        this.emitter.maxParticleSpeed.setTo(300, 300);
+        this.emitter.maxParticleScale = 0.4;
+        this.emitter.minParticleScale = 0.3;
     }
 
     particleBurst() {
-        console.log("GO PARTICLES GO!");
         this.emitter.x = global.MOUSE_X << 1;
         this.emitter.y = global.MOUSE_Y << 1;
-        this.emitter.start(true, 2000, null, 10);
+        this.emitter.explode(10000, 7);
     }
 
     shutdown() {
         $('body').off('click', this.particleBurst.bind(this));
     }
-
 }
 
 export default Like;
