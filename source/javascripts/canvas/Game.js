@@ -33,7 +33,7 @@ class Game extends Phaser.Game {
 
     addListeners() {
         global.d.on('startStage', (data)=> {
-            if (data.name != this.previousState) {
+            if (data.name != this.previousState || data.forceStart) {
                 this.state.start(data.name, true, false, data);
                 this.previousState = data.name;
             }
