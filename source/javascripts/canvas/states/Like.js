@@ -17,10 +17,7 @@ class Like extends CustomState {
 
         console.log('start Like State');
 
-        //$('body').on('click', e => {
-        //    this.particleBurst();
-        //});
-
+        $('body').on('click', this.particleBurst.bind(this));
 
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.game.stage.backgroundColor = 0x337799;
@@ -35,6 +32,10 @@ class Like extends CustomState {
         this.emitter.x = global.MOUSE_X << 1;
         this.emitter.y = global.MOUSE_Y << 1;
         this.emitter.start(true, 2000, null, 10);
+    }
+
+    shutdown() {
+        $('body').off('click', this.particleBurst.bind(this));
     }
 
 }

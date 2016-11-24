@@ -58,7 +58,6 @@ class App {
         this.$slides.on('click', (e)=> {
             if (!$(e.originalEvent.srcElement).hasClass('js-link')) {
                 this.sound.play('click');
-                global.d.dispatch("startStage=Idle");
                 Reveal.right();
             }
         });
@@ -68,6 +67,12 @@ class App {
         });
 
         Reveal.addEventListener('slidechanged', (event) => {
+            console.log(event);
+
+            if (!$(event.currentSlide).attr('data-canvas')) {
+                global.d.dispatch("startStage=Idle");
+            }
+
             this.doSlide(event);
         });
 
@@ -75,7 +80,6 @@ class App {
             global.MOUSE_X = e.pageX;
             global.MOUSE_Y = e.pageY;
         });
-
     }
 
     doSlide(event) {
