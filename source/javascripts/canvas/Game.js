@@ -5,6 +5,7 @@ import MouseTrail1 from './states/MouseTrail1';
 import MouseTrail2 from './states/MouseTrail2';
 import WindowError from './states/WindowError';
 import ColorReveal from './states/ColorReveal';
+import teamRotor from './states/teamRotor';
 
 var pjson = require('../../../package.json');
 
@@ -20,6 +21,7 @@ class Game extends Phaser.Game {
         this.state.add('MouseTrail2', MouseTrail2, false);
         this.state.add('WindowError', WindowError, false);
         this.state.add('ColorReveal', ColorReveal, false);
+        this.state.add('TeamRotor', teamRotor, false);
 
         this.state.start('Boot');
 
