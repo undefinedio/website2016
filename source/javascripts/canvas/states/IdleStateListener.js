@@ -8,7 +8,6 @@ class IdleState extends CustomState {
 
     create() {
         //TODO: do stuff that has to be done in Idle state => every page that does not have a scpecial Phaser state
-        console.info('canvas is now Idle');
     }
 }
 
