@@ -3,6 +3,7 @@ import Reveal from 'reveal.js/js/reveal'
 
 import './helpers/events';
 import Sound from './classes/sound';
+import Favicon from './classes/favicon.js';
 import Game from './canvas/Game';
 
 //import slide specific javascript
@@ -21,6 +22,7 @@ class App {
 
         new Game();
         new Carousel();
+        new Favicon();
 
         this.eventHandlers();
     }
