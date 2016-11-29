@@ -1,8 +1,8 @@
 import Boot from './states/Boot';
 import Preload from './states/Preload';
 import IdleStateListener from './states/IdleStateListener';
-import MouseTrail1 from './states/MouseTrail1';
 import MouseTrail2 from './states/MouseTrail2';
+import PatternBackground from './states/PatternBackground';
 import WindowError from './states/WindowError';
 import ColorReveal from './states/ColorReveal';
 import teamRotor from './states/teamRotor';
@@ -24,6 +24,7 @@ class Game extends Phaser.Game {
         this.state.add('ColorReveal', ColorReveal, false);
         this.state.add('TeamRotor', teamRotor, false);
         this.state.add('Like', Like, false);
+        this.state.add('PatternBackground', PatternBackground, false);
 
         this.state.start('Boot');
         this.previousState = undefined;
