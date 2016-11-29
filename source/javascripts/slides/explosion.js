@@ -3,20 +3,18 @@ import Reveal from 'reveal.js/js/reveal'
 
 class Explosion {
     constructor() {
-        var that = this;
-
         d.on("explosion", () => {
-            that.explosion();
+            this.explosion();
         });
     }
 
     explosion() {
-        var timerExplosion = setTimeout(function(){
+        var timerExplosion = setTimeout(() =>{
             $('.explosion h1').hide();
             $('.explosion img').show();
         }, 500);
 
-        var timerReveal = setTimeout(function () {
+        var timerReveal = setTimeout(() => {
             Reveal.right();
             $('.explosion h1').show();
             $('.explosion img').hide();

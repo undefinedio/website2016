@@ -11,10 +11,11 @@ import './slides/explosion.js';
 
 import Carousel from'./helpers/carousel.js';
 
-const CLICK_TIMEOUT = 300;
+const CLICK_TIMEOUT = 150;
 
 class App {
     constructor() {
+        global.clicksDisabled = false;
         this.env = this.getEnv();
 
         this.sound = new Sound();
@@ -62,23 +63,23 @@ class App {
     }
 
     eventHandlers() {
-        this.$slides.on('click', (e)=> {
-            if (!$(e.originalEvent.srcElement).hasClass('js-link')) {
-                if (this.disabled) {
+        this.$slides.on('click', e => {
+            if (!$(e.originalEvent.srcElement).hasClass('js-link') && !$('.present').hasClass('js-disable-click')) {
+                if (global.clicksDisabled) {
                     e.preventDefault();
                     e.stopImmediatePropagation();
                 } else {
-                    this.disabled = true;
+                    global.clicksDisabled = true;
                     this.sound.play('click');
                     Reveal.right();
                     setTimeout(() => {
-                        this.disabled = false;
+                        global.clicksDisabled = false;
                     }, CLICK_TIMEOUT);
                 }
             }
         });
 
-        Reveal.addEventListener('ready', (event) => {
+        Reveal.addEventListener('ready', event => {
             this.doSlide(event);
         });
 
