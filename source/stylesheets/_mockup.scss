@@ -24,7 +24,8 @@
                 transform: translate(-50%, -50%);
                 max-height: none;
                 max-width: none;
-                width: 100%;
+                width: 101%;
+                z-index: -1;
             }
         }
     }
@@ -50,7 +51,7 @@
                 transform: translate(-50%, -50%);
                 max-height: none;
                 max-width: none;
-                width: 100%;
+                width: 101%;
             }
         }
     }

@@ -1,13 +1,14 @@
 import '../../helpers/events';
 import CustomState from "./CustomState";
 
+var imageScrollPosition = {x: 0, y: 0};
+
 class PatternBackground extends CustomState {
     init(data) {
         this.imageUrl = data.image;
         this.imageScale = data.scale;
         this.speed = data.speed || 5;
         this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.imageScrollPosition = {x: 0, y: 0};
     }
 
     preload() {
@@ -42,12 +43,12 @@ class PatternBackground extends CustomState {
         this.clientY = global.MOUSE_Y << 1;
 
         this.texture.clear();
-        this.imageScrollPosition.x -= this.speed;
-        this.imageScrollPosition.y += this.speed;
+        imageScrollPosition.x -= this.speed;
+        imageScrollPosition.y += this.speed;
 
         this.images.forEach((img) => {
-            let x = img.x + this.imageScrollPosition.x;
-            let y = img.y + this.imageScrollPosition.y;
+            let x = img.x + imageScrollPosition.x;
+            let y = img.y + imageScrollPosition.y;
 
             let targetX = this.clientX - x;
             let targetY = this.clientY - y;
@@ -56,12 +57,12 @@ class PatternBackground extends CustomState {
             this.texture.renderXY(this.image, x, y, false);
         });
 
-        if (Math.abs(this.imageScrollPosition.x) > this.image.width) {
-            this.imageScrollPosition.x = 0;
+        if (Math.abs(imageScrollPosition.x) > this.image.width) {
+            imageScrollPosition.x = 0;
         }
 
-        if (Math.abs(this.imageScrollPosition.y) > this.image.height) {
-            this.imageScrollPosition.y = 0;
+        if (Math.abs(imageScrollPosition.y) > this.image.height) {
+            imageScrollPosition.y = 0;
         }
     }
 

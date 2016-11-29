@@ -11,6 +11,7 @@ class MouseTrail1 extends CustomState {
     }
 
     preload() {
+        this.game.load.bitmapFont('monoSpace', 'assets/images/bitmapfont/spacemono-regular_regular_48.PNG', 'assets/images/bitmapfont/spacemono-regular_regular_48.fnt');
         this.target = new Phaser.Point();
         this.letterArray = this.sentence.split('');
     }
