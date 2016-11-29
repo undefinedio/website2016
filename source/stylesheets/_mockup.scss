@@ -32,8 +32,16 @@
 
     .mockup-iphone {
         position: relative;
-        max-width: 320px;
+        max-width: 230px;
         margin: 0 auto;
+
+        @include media($medium-screen) {
+            max-width: 270px;
+        }
+
+        @include media($large-screen) {
+            max-width: 320px;
+        }
 
         .screen {
             position: absolute;
