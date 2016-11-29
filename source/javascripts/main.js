@@ -6,7 +6,9 @@ import Sound from './classes/sound';
 import Game from './canvas/Game';
 
 //import slide specific javascript
-import './slides/lolology.js';
+import './slides/explosion.js';
+
+import Carousel from'./helpers/carousel.js';
 
 class App {
     constructor() {
@@ -16,6 +18,7 @@ class App {
         this.initReveal();
 
         new Game();
+        new Carousel();
 
         this.eventHandlers();
     }

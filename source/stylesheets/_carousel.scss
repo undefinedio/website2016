@@ -1,0 +1,9 @@
+.carousel {
+    .carousel-element {
+        display: none;
+
+        &.first {
+            display: block;
+        }
+    }
+}
