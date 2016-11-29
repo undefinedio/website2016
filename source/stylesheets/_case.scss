@@ -22,7 +22,7 @@
             display: inline-block;
             list-style: none;
             margin-right: 1em;
-            color: $link-color;
+            color: white;
         }
     }
 
@@ -42,14 +42,40 @@
         @include media($intermedium-screen) {
             width: 100%;
         }
-
-        @include media($large-screen) {
-            max-width: 1000px;
-            width: 95%;
-        }
     }
 }
 
 .youtube-video {
     pointer-events: none;
+}
+
+.reveal {
+    .case-front {
+        h1 {
+            font-size: 2.5em;
+
+            @include media($medium-screen) {
+                font-size: 5em;
+            }
+
+            @include media($large-screen) {
+                font-size: 6em;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 0;
+
+            @include media($intermedium-screen) {
+                width: 100%;
+                max-width: 500px;
+                max-height: 250px;
+            }
+        }
+    }
 }
