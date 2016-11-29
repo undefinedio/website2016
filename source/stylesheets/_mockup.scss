@@ -3,6 +3,8 @@
         position: relative;
         max-width: 1000px;
         margin: 0 auto;
+        top: 50%;
+        transform: translateY(-50%);
 
         .screen {
             position: absolute;

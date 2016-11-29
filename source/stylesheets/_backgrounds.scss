@@ -18,18 +18,34 @@
     &.red {
         background: $red;
         color: $black;
+
+        a {
+            color: $black;
+        }
     }
 
     &.dark {
         background: $black;
         color: $red;
+
+        a {
+            color: $red;
+        }
     }
 
     &.bg-lolology {
-        background-size: 250px;
+        background-size: 20%;
         background-origin: content-box, padding-box;
         color: $black;
-        background-color: #6dffbe;
+        animation: bgColor 10s infinite linear;
+
+        @include media($medium-screen) {
+            background-size: 20%;
+        }
+
+        @include media($large-screen) {
+            background-size: 15%;
+        }
 
         &.bg-doge {
             background-image: url("../assets/images/lolology/lolology-doge.png");
@@ -53,19 +69,44 @@
     }
 
     &.bg-borninantwerp {
-        color: $black;
+        color: $white;
         background-color: #0087C4;
+    }
+
+    &.bg-taalhelden {
+        background-color: #63f5e1;
+    }
+
+    &.windows-error {
+        section {
+            cursor: none;
+        }
     }
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+@keyframes bgColor {
+    12.5% {
+        background-color: $red;
+    }
+    25% {
+        background-color: #FFA500;
+    }
+    37.5% {
+        background-color: #FFFF00;
     }
     50% {
-        background-position: 100% 51%;
+        background-color: #7FFF00;
+    }
+    62.5% {
+        background-color: #00FFFF;
+    }
+    75% {
+        background-color: #0000FF;
+    }
+    87.5% {
+        background-color: #9932CC;
     }
     100% {
-        background-position: 0% 50%;
+        background-color: #FF1493;
     }
 }
