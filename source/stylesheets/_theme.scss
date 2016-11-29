@@ -11,14 +11,22 @@ body {
         top: 50%;
         transform: translateY(-50%);
         padding: .5em;
+
+        @include media($xlarge-screen) {
+            max-width: 700px;
+        }
     }
 
     .content-frame {
         position: relative;
         margin: 0 auto;
-        max-width: 500px;
-        padding: 2em;
+        max-width: 400px;
         background-color: $red;
+        padding: 2em 2em .5em 2em;
+
+        @include media($large-screen) {
+            padding: 2em 2em .5em 2em;
+        }
     }
 
     img {
