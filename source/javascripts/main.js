@@ -10,6 +10,8 @@ import './slides/explosion.js';
 
 import Carousel from'./helpers/carousel.js';
 
+const CLICK_TIMEOUT = 300;
+
 class App {
     constructor() {
         this.env = this.getEnv();
@@ -60,8 +62,17 @@ class App {
     eventHandlers() {
         this.$slides.on('click', (e)=> {
             if (!$(e.originalEvent.srcElement).hasClass('js-link')) {
-                this.sound.play('click');
-                Reveal.right();
+                if (this.disabled) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                } else {
+                    this.disabled = true;
+                    this.sound.play('click');
+                    Reveal.right();
+                    setTimeout(() => {
+                        this.disabled = false;
+                    }, CLICK_TIMEOUT);
+                }
             }
         });
 

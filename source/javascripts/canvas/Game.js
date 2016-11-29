@@ -7,6 +7,7 @@ import WindowError from './states/WindowError';
 import ColorReveal from './states/ColorReveal';
 import teamRotor from './states/teamRotor';
 import Like from './states/Like';
+import Clouds from './states/Clouds';
 
 var pjson = require('../../../package.json');
 
@@ -25,6 +26,7 @@ class Game extends Phaser.Game {
         this.state.add('TeamRotor', teamRotor, false);
         this.state.add('Like', Like, false);
         this.state.add('PatternBackground', PatternBackground, false);
+        this.state.add('Clouds', Clouds, false);
 
         this.state.start('Boot');
         this.previousState = undefined;
