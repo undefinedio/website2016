@@ -30,7 +30,6 @@ class Game extends Phaser.Game {
         this.state.add('PatternBackground', PatternBackground, false);
         this.state.add('Clouds', Clouds, false);
 
-        console.log('starting boot');
         this.previousState = undefined;
 
         this.addListeners();
