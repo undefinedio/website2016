@@ -12,6 +12,7 @@
     "favico.js": "^0.3.10",
     "gsap": "^1.19.0",
     "howler": "1.1.*",
+    "html5shiv": "^3.7.3",
     "jquery": "^3.1.1",
     "reveal.js": "^3.1.0"
   },
