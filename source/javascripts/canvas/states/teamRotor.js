@@ -7,9 +7,7 @@ class teamRotor extends CustomState {
     }
 
     preload() {
-        this.game.load.image('rotor-vincent', 'assets/images/team/flat-vincent.png');
-        this.game.load.image('rotor-benni', 'assets/images/team/flat-benni.png');
-        this.game.load.image('rotor-koray', 'assets/images/team/flat-koray.png');
+        this.game.load.image('rotor-' + this.face, 'assets/images/team/flat-' + this.face + '.png');
     }
 
     create() {

@@ -11,7 +11,8 @@ import './slides/explosion.js';
 
 import Carousel from'./helpers/carousel.js';
 
-const CLICK_TIMEOUT = 150;
+//start this as soon as possible to preload all the assets needed
+const CLICK_TIMEOUT = 200;
 
 class App {
     constructor() {
@@ -21,7 +22,6 @@ class App {
         this.sound = new Sound();
         this.initReveal();
 
-        new Game();
         new Carousel();
         new Favicon();
 
@@ -85,6 +85,7 @@ class App {
 
         Reveal.addEventListener('slidechanged', (event) => {
             if (!$(event.currentSlide).attr('data-canvas')) {
+                //TODO: do something with the "PreloadReady" event to prevent flashes
                 global.d.dispatch("startStage=Idle");
             }
             this.doSlide(event);
@@ -143,5 +144,6 @@ class App {
 }
 
 $(document).ready(() => {
+    new Game();
     new App();
 });
