@@ -1,6 +1,5 @@
 import '../../helpers/events';
 import CustomState from "./CustomState";
-import $ from 'jquery';
 
 var segment, nextSegment, vector;
 
@@ -60,7 +59,10 @@ class MouseTrail1 extends CustomState {
     }
 
     shutdown() {
-        this.snakeGroup.destroy(true);
+        if (this.snakeGroup) {
+            this.snakeGroup.destroy(true);
+        }
+
         if (this.snakeHead) {
             this.snakeHead.destroy();
         }
