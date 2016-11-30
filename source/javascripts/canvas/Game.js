@@ -17,7 +17,9 @@ class Game extends Phaser.Game {
 
         this.settings = {};
 
-        this.state.add('Boot', Boot, false);
+        this.state.add('Boot', Boot, true);
+        this.state.start('Boot', true, false);
+
         this.state.add('Preload', Preload, false);
         this.state.add('IdleStateListener', IdleStateListener, false);
         this.state.add('MouseTrail2', MouseTrail2, false);
@@ -28,7 +30,7 @@ class Game extends Phaser.Game {
         this.state.add('PatternBackground', PatternBackground, false);
         this.state.add('Clouds', Clouds, false);
 
-        this.state.start('Boot');
+        console.log('starting boot');
         this.previousState = undefined;
 
         this.addListeners();

@@ -4,13 +4,8 @@ import $ from 'jquery';
 
 class Like extends CustomState {
     init(data) {
-        this.imageUrl = data.image;
         this.imageScale = data.scale;
         this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    }
-
-    preload() {
-        this.game.load.image('bg-cloud', 'assets/images/bg-cloud.png');
     }
 
     create() {

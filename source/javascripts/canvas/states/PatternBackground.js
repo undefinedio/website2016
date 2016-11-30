@@ -5,19 +5,20 @@ var imageScrollPosition = {x: 0, y: 0};
 
 class PatternBackground extends CustomState {
     init(data) {
-        this.imageUrl = data.image;
+        this.imageKey = data.image;
         this.imageScale = data.scale;
         this.speed = data.speed || 5;
         this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     }
 
     preload() {
-        this.game.load.image('bgImage', this.imageUrl);
+        this.game.load.image(this.imageKey, 'assets/images/lolology/' + this.imageKey + '.png');
+
         this.texture = this.game.add.renderTexture(this.game.world.width, this.game.world.height, 'window');
     }
 
     create() {
-        this.image = this.game.make.sprite(0, 0, 'bgImage');
+        this.image = this.game.make.sprite(0, 0, this.imageKey);
         this.image.anchor.set(0.5);
         this.image.scale.setTo(this.imageScale);
         this.game.add.sprite(0, 0, this.texture);
