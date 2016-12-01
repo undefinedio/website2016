@@ -34,7 +34,7 @@ class App {
             history = false;
 
         window.Reveal = Reveal;
-        this.$slides = $('.js-slides');
+        this.$slides = $('body');
 
         if (this.env) {
             keyboard = true;
