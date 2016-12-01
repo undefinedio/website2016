@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
+import 'html5shiv';
 
 import './helpers/events';
 import Sound from './classes/sound';
