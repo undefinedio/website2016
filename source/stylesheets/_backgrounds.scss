@@ -6,6 +6,10 @@
     right: 0;
     z-index: 0;
 
+    a {
+        color: $black;
+    }
+
     &.gray {
         background: $gray;
         color: $red;
