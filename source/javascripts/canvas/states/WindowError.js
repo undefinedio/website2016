@@ -22,10 +22,8 @@ class MouseTrail1 extends CustomState {
         this.game.add.sprite(0, 0, this.texture);
 
         this.caraDimensions = {width: this.cara.width * this.imageScale, height: this.cara.height * this.imageScale};
-        console.log(this.caraDimensions);
 
         if (gyro.getFeatures().length > 0 && !this.game.device.desktop) {
-
             gyro.frequency = 5;
             let speedScale = 1.8;
             this.clientX = this.world.centerX;
@@ -57,10 +55,10 @@ class MouseTrail1 extends CustomState {
         }
 
         if (this.game.device.desktop) {
-            this.clientX = global.MOUSE_X * 2;
-            this.clientY = global.MOUSE_Y * 2;
-
+            this.clientX = global.MOUSE_X << 1; //bit shifting 1 to the left equals times 2 ;-)
+            this.clientY = global.MOUSE_Y << 1;
         }
+
         this.texture.renderXY(this.cara, this.clientX, this.clientY);
     }
 
