@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
-import 'html5shiv';
 
 import './helpers/events';
 import Sound from './classes/sound';
@@ -31,7 +30,7 @@ class App {
 
     initReveal() {
         let keyboard = false,
-            history = false;
+            history = true;
 
         window.Reveal = Reveal;
         this.$slides = $('body');
