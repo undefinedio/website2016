@@ -13,7 +13,7 @@ var pjson = require('../../../package.json');
 
 class Game extends Phaser.Game {
     constructor() {
-        super(document.getElementById('canvasWrapper').clientWidth * 2, document.getElementById('canvasWrapper').clientHeight * 2, Phaser.AUTO, 'game', null, true);
+        super(document.getElementById('canvasWrapper').clientWidth * 2, document.getElementById('canvasWrapper').clientHeight * 2, Phaser.CANVAS, 'game', null, true);
 
         this.settings = {};
 

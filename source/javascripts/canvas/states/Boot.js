@@ -7,6 +7,11 @@ class Boot extends CustomState {
         // auto pause if window looses focus
         this.stage.disableVisibilityChange = false;
         this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.scale.refresh();
+
+        if (this.game.device.android && this.game.device.chrome == false) {
+            this.game.stage.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        }
     }
 
     preload() {
