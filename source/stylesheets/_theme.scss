@@ -3,6 +3,11 @@ body {
     font-size: 100%;
 }
 
+main {
+    unicode-bidi: isolate;
+    display: block;
+}
+
 .reveal {
     .content-center {
         position: relative;
