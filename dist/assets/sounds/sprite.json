@@ -1,5 +1,5 @@
 {
-  "urls": [
+  "src": [
     "assets/sounds/sprite.ogg",
     "assets/sounds/sprite.m4a",
     "assets/sounds/sprite.mp3",
@@ -12,11 +12,13 @@
     ],
     "taalunie01": [
       3000,
-      27428.571428571428
+      27428.571428571428,
+      true
     ],
     "taalunie02": [
       32000,
-      44651.201814058964
+      44651.201814058964,
+      true
     ]
   }
 }

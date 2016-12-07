@@ -30,7 +30,7 @@ class App {
 
     initReveal() {
         let keyboard = false,
-            history = true;
+            history = false;
 
         window.Reveal = Reveal;
         this.$slides = $('body');
@@ -102,8 +102,8 @@ class App {
 
         var fireEvent = $el.data('event');
         var startCanvasStage = $el.data('canvas');
-        var playSound = $el.data('play');
-        var stopSound = $el.data('stop');
+        var playSound = $el.data('play-audio');
+        var stopSound = $el.data('stop-audio');
         var className = $el.data('class');
 
         if (fireEvent) {
@@ -121,7 +121,7 @@ class App {
         }
 
         if (stopSound) {
-            this.sound.stop(playSound);
+            this.sound.stop();
         }
 
         if (className) {

@@ -82,7 +82,7 @@ gulp.task("audio", function () {
         .pipe(audiosprite({
             format: 'howler',
             path: "assets/sounds",
-            loop: "taalunie"
+            loop: ["taalunie01", "taalunie02"]
         }))
         .pipe(gulp.dest(PATHS.assets + '/sounds'));
 });
