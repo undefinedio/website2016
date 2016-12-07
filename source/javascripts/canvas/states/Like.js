@@ -18,7 +18,7 @@ class Like extends CustomState {
 
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        this.emitter = this.game.add.emitter(0, 0, 300);
+        this.emitter = this.game.add.emitter(0, 0, 200);
         this.emitter.makeParticles('like', undefined, undefined, true, true);
         this.emitter.setScale(.5, .3, .5, .3, 10000, Phaser.Easing.Quintic.Out);
         this.emitter.gravity = 100;
@@ -31,7 +31,7 @@ class Like extends CustomState {
     particleBurst() {
         this.emitter.x = global.MOUSE_X << 1;
         this.emitter.y = global.MOUSE_Y << 1;
-        this.emitter.explode(10000, 7);
+        this.emitter.explode(10000, 5);
     }
 
     shutdown() {
