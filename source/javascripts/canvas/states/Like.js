@@ -38,7 +38,6 @@ class Like extends CustomState {
 
     shutdown() {
         this.emitter.destroy();
-        console.log('shutdown like');
         $('body').off('click.particleburst');
     }
 }
