@@ -14,7 +14,9 @@ class Like extends CustomState {
     }
 
     create() {
-        $('body').on('click', this.particleBurst.bind(this));
+        $('body').on('click.particleburst', () => {
+            this.particleBurst();
+        });
 
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -35,7 +37,9 @@ class Like extends CustomState {
     }
 
     shutdown() {
-        $('body').off('click', this.particleBurst.bind(this));
+        this.emitter.destroy();
+        console.log('shutdown like');
+        $('body').off('click.particleburst');
     }
 }
 

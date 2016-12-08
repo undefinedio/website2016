@@ -4,8 +4,6 @@ import IdleStateListener from './states/IdleStateListener';
 import MouseTrail2 from './states/MouseTrail2';
 import PatternBackground from './states/PatternBackground';
 import WindowError from './states/WindowError';
-import ColorReveal from './states/ColorReveal';
-import teamRotor from './states/teamRotor';
 import Like from './states/Like';
 import Clouds from './states/Clouds';
 
@@ -24,8 +22,6 @@ class Game extends Phaser.Game {
         this.state.add('IdleStateListener', IdleStateListener, false);
         this.state.add('MouseTrail2', MouseTrail2, false);
         this.state.add('WindowError', WindowError, false);
-        this.state.add('ColorReveal', ColorReveal, false);
-        this.state.add('TeamRotor', teamRotor, false);
         this.state.add('Like', Like, false);
         this.state.add('PatternBackground', PatternBackground, false);
         this.state.add('Clouds', Clouds, false);
