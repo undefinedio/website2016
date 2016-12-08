@@ -10,8 +10,8 @@
         .screen {
             position: absolute;
             top: 6%;
-            left: 13.7%;
-            width: 72.7%;
+            left: 12.5%;
+            width: 74%;
             height: 82.1%;
             background-repeat: no-repeat;
             background-size: 95%;
@@ -34,6 +34,11 @@
                 height: 102%;
             }
         }
+    }
+
+    .mockup-image {
+        position: relative;
+        z-index: 3;
     }
 
     .mockup-iphone {

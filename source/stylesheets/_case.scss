@@ -78,4 +78,35 @@
             }
         }
     }
+
+    .case-title,
+    .client-title {
+        font-family: "Space Mono", sans-serif;
+        letter-spacing: 1px;
+        position: fixed;
+        text-align: center;
+        bottom: 2em;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+        display: none;
+
+        @include media($medium-screen) {
+            display: block;
+            font-size: .75em;
+        }
+
+        @include media($large-screen) {
+            font-size: 1em;
+        }
+
+    }
+
+    .client-title {
+        left: 2em;
+    }
+
+    .case-title {
+        right: 2em;
+    }
 }
+
