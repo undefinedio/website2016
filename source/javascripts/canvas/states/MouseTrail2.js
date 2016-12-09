@@ -1,12 +1,15 @@
 import '../../helpers/events';
 import CustomState from './CustomState';
-import gyro from '../plugins/gyro';
+require('fulltilt/dist/fulltilt.js');
+import GyroNorm from 'gyronorm';
+
 var segment, nextSegment, vector;
 
 class MouseTrail1 extends CustomState {
     init(data) {
         this.sentence = " " + data.text || "UNDEFINED";
         this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.gyro = new GyroNorm();
     }
 
     preload() {
@@ -51,16 +54,25 @@ class MouseTrail1 extends CustomState {
             this.path.push(this.game.add.bitmapText(this.clientX + i * this.distance, this.clientY, 'monoSpace', this.letterArray[i], 30, this.snakeGroup));
         }
 
-        if (gyro.getFeatures().length > 0 && !this.game.device.desktop) {
-            gyro.frequency = 10;
-            let speedScale = 1.8;
+        if (!this.game.device.desktop) {
+            this.gyro = new GyroNorm();
 
-            gyro.startTracking((o) => {
-                if (this.snakeHead) {
-                    this.snakeHead.x += o.x * speedScale;
-                    this.snakeHead.y -= o.y * speedScale;
-                    this.snakeHead.body.angularVelocity = 0;
-                }
+            this.gyro.init({
+                frequency: 10,                   // ( How often the object sends the values - milliseconds )
+                gravityNormalized: true,         // ( If the garvity related values to be normalized )
+                orientationBase: GyroNorm.GAME,      // ( Can be GyroNorm.GAME or GyroNorm.WORLD. gn.GAME returns orientation values with respect to the head direction of the device. gn.WORLD returns the orientation values with respect to the actual north direction of the world. )
+                decimalCount: 2,                 // ( How many digits after the decimal point will there be in the return values )
+                logger: false,                    // ( Function to be called to log messages from gyronorm.js )
+                screenAdjusted: false            // ( If set to true it will return screen adjusted values. )
+            }).then(() => {
+                this.gyro.start((data)=> {
+                    let speedScale = 1.8;
+
+                    if (this.snakeHead) {
+                        this.snakeHead.x += data.dm.gx * speedScale;
+                        this.snakeHead.y -= data.dm.gy * speedScale;
+                    }
+                });
             });
         }
     }
@@ -89,14 +101,16 @@ class MouseTrail1 extends CustomState {
     }
 
     shutdown() {
-        gyro.stopTracking();
-
         if (this.snakeGroup) {
             this.snakeGroup.destroy(true);
         }
 
         if (this.snakeHead) {
             this.snakeHead.destroy();
+        }
+
+        if (!this.game.device.desktop) {
+            this.gyro.stopLogging();
         }
     }
 }

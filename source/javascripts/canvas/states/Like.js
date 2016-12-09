@@ -37,7 +37,9 @@ class Like extends CustomState {
     }
 
     shutdown() {
-        this.emitter.destroy();
+        if (this.emitter) {
+            this.emitter.destroy();
+        }
         $('body').off('click.particleburst');
     }
 }

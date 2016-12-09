@@ -33,9 +33,6 @@ class Like extends CustomState {
             });
         }
     }
-
-    shutdown() {
-    }
 }
 
 export default Like;

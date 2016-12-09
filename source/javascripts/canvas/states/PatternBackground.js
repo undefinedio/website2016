@@ -68,8 +68,13 @@ class PatternBackground extends CustomState {
     }
 
     shutdown() {
-        this.texture.destroy(true);
-        this.image.destroy(true);
+        if (this.texture) {
+            this.texture.destroy(true);
+        }
+
+        if (this.image) {
+            this.image.destroy(true);
+        }
     }
 }
 
