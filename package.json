@@ -10,7 +10,9 @@
     "babel-preset-es2015": "^6.16.0",
     "evently": "^2.3.1",
     "favico.js": "^0.3.10",
+    "fulltilt": "github:adtile/Full-Tilt",
     "gsap": "^1.19.0",
+    "gyronorm": "^2.0.4",
     "howler": "^2.0.2",
     "jquery": "^3.1.1",
     "reveal.js": "^3.1.0"
