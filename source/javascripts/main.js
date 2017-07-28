@@ -22,7 +22,9 @@ class App {
         this.sound = new Sound();
         this.initReveal();
 
-        new Carousel();
+        this.carouselClients = new Carousel('.carousel-client', 500);
+        this.carouselKop = new Carousel('.carousel-kop', 500);
+
         new Favicon();
 
         this.eventHandlers();

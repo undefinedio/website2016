@@ -1,28 +1,39 @@
 import $ from 'jquery';
 
 class Carousel {
-    constructor(container, element){
-        let i = 0,
-            j = 1,
-            that = this,
-            $container = $('.carousel'),
-            $element = $('.carousel-element'),
-            $prevElement = $element.eq(0),
-            totalElements = $element.length;
+    constructor(container, speed) {
+        this.$container = $(container);
+        this.$element = $(container + ' .carousel-element');
+        this.$prevElement = this.$element.eq(0);
+        this.totalElements = this.$element.length;
+        this.speed = speed;
 
-        this.timer = setInterval(function () {
-            $prevElement.hide();
+        this.setTimer();
 
-            $element.eq(j).show();
+        this.$container.hover(e => {
+            clearInterval(this.timer);
+        }, e => {
+            this.setTimer();
+        });
+    }
 
-            $prevElement = $element.eq(j);
+    setTimer() {
+        let j = 1;
+
+        this.timer = setInterval(() => {
+            this.$prevElement.hide();
+
+            this.$element.eq(j).show();
+
+            this.$prevElement = this.$element.eq(j);
 
             j++;
 
-            if (j >= totalElements) {
+            if (j >= this.totalElements) {
                 j = 0;
             }
-        }, 100);
+
+        }, this.speed);
     }
 }
 

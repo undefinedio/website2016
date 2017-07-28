@@ -1,0 +1,106 @@
+{
+"frames": [
+	{
+		"filename": "spin-linear0000.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0001.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0002.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0003.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0004.png",
+		"frame": {"x":1026, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0005.png",
+		"frame": {"x":513, "y":1539, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0006.png",
+		"frame": {"x":513, "y":1026, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0007.png",
+		"frame": {"x":513, "y":513, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0008.png",
+		"frame": {"x":1026, "y":513, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0009.png",
+		"frame": {"x":0, "y":1539, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0010.png",
+		"frame": {"x":0, "y":1026, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0011.png",
+		"frame": {"x":0, "y":513, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0012.png",
+		"frame": {"x":0, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0013.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0014.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	},
+	{
+		"filename": "spin-linear0015.png",
+		"frame": {"x":513, "y":0, "w":512, "h":512},
+		"spriteSourceSize": {"x":134,"y":37,"w":800,"h":600},
+		"sourceSize": {"w":800,"h":600}
+	}
+
+],
+"meta": {
+	"image": "ball_sprite.png",
+	"size": {"w": 1539, "h": 2052},
+	"scale": "1"
+}
+}
