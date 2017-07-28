@@ -170,7 +170,9 @@ class Pong extends CustomState {
     startBall() {
         this.ballSprite.visible = true;
 
-        this.paddleGroup.setAll('visible', false);
+        if (!this.game.device.desktop) {
+            this.paddleGroup.setAll('visible', false);
+        }
 
         let randomAngle = this.game.rnd.pick(this.gameProperties.ballRandomStartingAngleRight.concat(this.gameProperties.ballRandomStartingAngleLeft));
 
