@@ -1,0 +1,26 @@
+.bg-kop {
+    #canvasWrapper {
+        pointer-events: none;
+        z-index: 100;
+    }
+}
+
+.reveal .slides > section.kop {
+    .content-large {
+        max-width: 800px;
+    }
+
+    img {
+        max-height: 300px;
+        margin-bottom: 0;
+        width: auto;
+
+        @include media($medium-screen) {
+            max-height: 450px;
+        }
+    }
+
+    .carousel-element img {
+        border: 3px solid #2cff00;
+    }
+}

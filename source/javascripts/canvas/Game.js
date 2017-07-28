@@ -6,6 +6,7 @@ import PatternBackground from './states/PatternBackground';
 import WindowError from './states/WindowError';
 import Like from './states/Like';
 import Clouds from './states/Clouds';
+import Pong from './states/Pong';
 
 var pjson = require('../../../package.json');
 
@@ -25,6 +26,7 @@ class Game extends Phaser.Game {
         this.state.add('Like', Like, false);
         this.state.add('PatternBackground', PatternBackground, false);
         this.state.add('Clouds', Clouds, false);
+        this.state.add('Pong', Pong, false);
 
         this.previousState = undefined;
 
@@ -33,7 +35,13 @@ class Game extends Phaser.Game {
 
     addListeners() {
         global.d.on('startStage', (data)=> {
-            if (data.name != this.previousState || data.forceStart) {
+            if (data.name != this.previousState || data.forceStart ) {
+
+                //disable pong on mobile
+                if(!this.device.desktop && data.name == 'Pong'){
+                    return;
+                }
+
                 this.state.start(data.name, true, false, data);
                 this.previousState = data.name;
             }
