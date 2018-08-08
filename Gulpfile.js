@@ -16,6 +16,10 @@ var concat = require('gulp-concat');
 var buffer = require('gulp-buffer');
 var sass = require("gulp-sass");
 var browserSync = require('browser-sync');
+var uglify = require('gulp-uglify');
+var minify = require('gulp-minify');
+var cssnano = require('gulp-cssnano');
+var sourcemaps = require('gulp-sourcemaps');
 
 var PATHS = {
     assets: "dist/assets/",
@@ -66,6 +70,8 @@ gulp.task("js", function () {
         })
         .pipe(source('main.js'))
         .pipe(buffer())
+        .pipe(minify())
+        .pipe(uglify())
         .pipe(gulp.dest(PATHS.assets))
 });
 
@@ -74,6 +80,8 @@ gulp.task("sass", function () {
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
+        .pipe(cssnano())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(PATHS.assets))
 });
 
