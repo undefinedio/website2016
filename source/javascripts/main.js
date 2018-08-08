@@ -51,7 +51,7 @@ class App {
             touch: false,
             loop: true,
             mouseWheel: false,
-            viewDistance: 5,
+            viewDistance: 2,
             transition: 'none',
             hideAddressBar: true,
             overview: false,
