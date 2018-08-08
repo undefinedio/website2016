@@ -10,13 +10,13 @@ class Explosion {
 
     explosion() {
         var timerExplosion = setTimeout(() =>{
-            $('.explosion h1').hide();
+            $('.explosion h2').hide();
             $('.explosion img').show();
         }, 500);
 
         var timerReveal = setTimeout(() => {
             Reveal.right();
-            $('.explosion h1').show();
+            $('.explosion h2').show();
             $('.explosion img').hide();
         }, 1300);
     }
