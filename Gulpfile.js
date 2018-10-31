@@ -58,7 +58,7 @@ gulp.task("js", function () {
         transform: [
             [
                 babelify, {
-                presets: ["es2015"]
+                presets: ["@babel/preset-env"]
             }
             ]
         ]
@@ -100,7 +100,7 @@ gulp.task("images", function () {
         .pipe(newer(PATHS.assets + 'images'))
         .pipe(imagemin({
             progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
+            svgoPlugins: [{ removeViewBox: false }],
             use: [pngquant()]
         }))
         .pipe(gulp.dest(PATHS.assets + 'images'))
