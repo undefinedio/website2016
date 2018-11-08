@@ -58,7 +58,7 @@ gulp.task("js", function () {
         transform: [
             [
                 babelify, {
-                presets: ["@babel/preset-env"]
+                presets: ["es2015"]
             }
             ]
         ]

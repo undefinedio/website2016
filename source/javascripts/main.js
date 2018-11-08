@@ -9,7 +9,7 @@ import Game from './canvas/Game';
 //import slide specific javascript
 import './slides/explosion.js';
 
-import Carousel from'./helpers/carousel.js';
+import Carousel from './helpers/carousel.js';
 
 //start this as soon as possible to preload all the assets needed
 const CLICK_TIMEOUT = 200;
@@ -21,7 +21,7 @@ class App {
 
         this.sound = new Sound();
         this.initReveal();
-
+        alert('jow');
         this.carouselClients = new Carousel('.carousel-client', 500);
         this.carouselKop = new Carousel('.carousel-kop', 500);
 
