@@ -1,5 +1,5 @@
 {
-  "src": [
+  "urls": [
     "assets/sounds/sprite.ogg",
     "assets/sounds/sprite.m4a",
     "assets/sounds/sprite.mp3",
@@ -32,5 +32,11 @@
       44651.201814058964,
       true
     ]
-  }
+  },
+  "src": [
+    "assets/sounds/sprite.ogg",
+    "assets/sounds/sprite.m4a",
+    "assets/sounds/sprite.mp3",
+    "assets/sounds/sprite.ac3"
+  ]
 }

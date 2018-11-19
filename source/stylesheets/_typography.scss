@@ -1,10 +1,19 @@
 .reveal {
-    h1,
+   
+    h1 {
+        font-family: "Space Mono", sans-serif;
+        letter-spacing: 2px;
+        font-weight: 100;
+        position: relative;
+        font-size: 10px;
+    }
+
+
     h2,
     h3,
     h4 {
         font-family: "Bagnard", sans-serif;
-        font-weight: 700;
+        font-weight: 600;
         position: relative;
 
         &.quote {
@@ -12,7 +21,12 @@
         }
     }
 
-    h1,
+    h4 {
+        font-weight: 400;
+    }
+
+
+
     h2 {
         font-size: 1.5em;
 
