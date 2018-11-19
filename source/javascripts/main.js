@@ -5,7 +5,6 @@ import './helpers/events';
 import Sound from './classes/sound';
 import Favicon from './classes/favicon.js';
 import Game from './canvas/Game';
-
 //import slide specific javascript
 import './slides/explosion.js';
 
@@ -21,7 +20,6 @@ class App {
 
         this.sound = new Sound();
         this.initReveal();
-        alert('jow');
         this.carouselClients = new Carousel('.carousel-client', 500);
         this.carouselKop = new Carousel('.carousel-kop', 500);
 
@@ -101,7 +99,6 @@ class App {
 
     doSlide(event) {
         let $el = $(event.currentSlide);
-
         var fireEvent = $el.data('event');
         var startCanvasStage = $el.data('canvas');
         var playSound = $el.data('play-audio');
@@ -115,6 +112,8 @@ class App {
         if (startCanvasStage) {
             if (typeof startCanvasStage == 'object' && startCanvasStage.startStage) {
                 global.d.dispatch("startStage", startCanvasStage.startStage);
+            } else {
+                console.error('data-canvas is not formatted correctly');
             }
         }
 
