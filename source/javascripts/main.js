@@ -7,6 +7,7 @@ import Favicon from './classes/favicon.js';
 import Game from './canvas/Game';
 //import slide specific javascript
 import './slides/explosion.js';
+import './slides/home.js';
 
 import Carousel from './helpers/carousel.js';
 
