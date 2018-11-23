@@ -1,13 +1,17 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
+import jQueryBridget from "jquery-bridget"
 
 import './helpers/events';
 import Sound from './classes/sound';
 import Favicon from './classes/favicon.js';
 import Game from './canvas/Game';
+
 //import slide specific javascript
 import './slides/explosion.js';
 import './slides/home.js';
+import './slides/contact.js';
+import './slides/marquee.js';
 
 import Carousel from './helpers/carousel.js';
 

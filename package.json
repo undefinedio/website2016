@@ -4,6 +4,13 @@
     "description": "New website for Undefined",
     "main": "Gulpfile.js",
     "private": true,
+    "browser": {
+    },
+    "browserify": {
+        "transform": [
+            "browserify-shim"
+        ]
+    },
     "dependencies": {
         "Devices.css": "github:marvelapp/devices.css",
         "evently": "^2.3.1",
@@ -13,6 +20,8 @@
         "gyronorm": "^2.0.4",
         "howler": "^2.0.2",
         "jquery": "^3.1.1",
+        "jquery-bridget": "^2.0.1",
+        "jquery.marquee": "^1.5.0",
         "reveal.js": "^3.1.0"
     },
     "resolutions": {
