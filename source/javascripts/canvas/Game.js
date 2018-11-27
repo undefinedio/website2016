@@ -7,7 +7,8 @@ import WindowError from './states/WindowError';
 import Like from './states/Like';
 import Clouds from './states/Clouds';
 import Pong from './states/Pong';
-import Clients from './states/Clients';
+// import Clients from './states/clients';
+import Home from './states/Home';
 
 var pjson = require('../../../package.json');
 
@@ -27,7 +28,7 @@ class Game extends Phaser.Game {
         this.state.add('PatternBackground', PatternBackground, false);
         this.state.add('Clouds', Clouds, false);
         this.state.add('Pong', Pong, false);
-        // this.state.add('Clients', Clients, false);
+        this.state.add('Home', Home, false);
 
         this.previousState = undefined;
 
@@ -35,11 +36,11 @@ class Game extends Phaser.Game {
     }
 
     addListeners() {
-        global.d.on('startStage', (data)=> {
-            if (data.name != this.previousState || data.forceStart ) {
+        global.d.on('startStage', (data) => {
+            if (data.name != this.previousState || data.forceStart) {
 
                 //disable pong on mobile
-                if(!this.device.desktop && data.name == 'Pong'){
+                if (!this.device.desktop && data.name == 'Pong') {
                     return;
                 }
 
@@ -48,7 +49,7 @@ class Game extends Phaser.Game {
             }
         });
 
-        global.d.on('startStage=Idle', ()=> {
+        global.d.on('startStage=Idle', () => {
             this.state.start('IdleStateListener');
         });
     }

@@ -25,11 +25,29 @@
             animation: marquee-right 20s linear infinite;
         }
     }
+
+    &.right {
+        right: 0;
+        transform: translate(-50%, 50%) rotate(90deg);
+
+        .marquee {
+            animation: marquee-right 20s linear infinite;
+        }
+    }
+
+    &.left {
+        left: 0;
+        transform: translate(50%,-50%) rotate(-90deg);
+
+        .marquee {
+            animation: marquee-right 20s linear infinite;
+        }
+    }
 }
 
 .marquee {
     display: block;
-    width: 500%;
+    width: 400%;
     margin: 70px 0;
     position: absolute;
 
@@ -75,7 +93,7 @@
         left: 0;
     }
     100% {
-        left: -250%;
+        left: -200%;
     }
 }
 
@@ -84,6 +102,6 @@
         right: 0;
     }
     100% {
-        right: -250%;
+        right: -200%;
     }
 }

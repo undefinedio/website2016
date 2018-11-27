@@ -1,5 +1,6 @@
 import '../../helpers/events';
 import CustomState from './CustomState';
+
 require('fulltilt/dist/fulltilt.js');
 import GyroNorm from 'gyronorm';
 
