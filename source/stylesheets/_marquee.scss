@@ -28,7 +28,7 @@
 
     &.right {
         right: 0;
-        transform: translate(-50%, 50%) rotate(90deg);
+        transform: translate(calc(-50% + 1.5em), 0) rotate(90deg);
 
         .marquee {
             animation: marquee-right 20s linear infinite;
@@ -37,7 +37,7 @@
 
     &.left {
         left: 0;
-        transform: translate(50%,-50%) rotate(-90deg);
+        transform: translate(calc(50% - 1.5em), 50%) rotate(-90deg);
 
         .marquee {
             animation: marquee-right 20s linear infinite;

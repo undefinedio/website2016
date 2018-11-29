@@ -38,10 +38,13 @@
     img {
         width: 100%;
         margin-bottom: 0;
+    }
+}
 
-        @include media($intermedium-screen) {
-            width: 100%;
-        }
+.case-mockup-desktop-iphone {
+    img {
+        width: 100%;
+        margin-bottom: 0;
     }
 }
 
@@ -106,6 +109,12 @@
 
     .client-title {
         left: 2em;
+
+        &::after {
+            content: '↗';
+            display: inline;
+            margin-left: .25em;
+        }
     }
 
     .case-title {
@@ -117,4 +126,3 @@
         right: 50%; left: 50%;
     }
 }
-
