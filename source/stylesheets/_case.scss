@@ -110,10 +110,12 @@
     .client-title {
         left: 2em;
 
-        &::after {
-            content: '↗';
-            display: inline;
-            margin-left: .25em;
+        &.link {
+            &::after {
+                content: '↗';
+                display: inline;
+                margin-left: .25em;
+            }
         }
     }
 
@@ -123,6 +125,7 @@
 
     .project-title {
         font-weight: bold;
-        right: 50%; left: 50%;
+        right: 50%;
+        left: 50%;
     }
 }
