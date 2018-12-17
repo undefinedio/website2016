@@ -9,12 +9,6 @@ class Carousel {
         this.speed = speed;
 
         this.setTimer();
-
-        this.$container.hover(e => {
-            clearInterval(this.timer);
-        }, e => {
-            this.setTimer();
-        });
     }
 
     setTimer() {

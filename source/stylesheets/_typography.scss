@@ -53,6 +53,12 @@
                     background-image: url("../assets/images/line-green.svg");
                 }
             }
+
+            &.orange {
+                &::after {
+                    background-image: url("../assets/images/line-orange.svg");
+                }
+            }
         }
 
         @include media($medium-screen) {

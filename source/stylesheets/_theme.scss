@@ -32,6 +32,16 @@ main {
         }
     }
 
+    .content-large {
+        @include media($intermedium-screen) {
+            max-width: 600px;
+        }
+
+        @include media($xlarge-screen) {
+            max-width: 960px;
+        }
+    }
+
     .content-frame {
         position: relative;
         margin: 0 auto;
