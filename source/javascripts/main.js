@@ -21,7 +21,7 @@ class App {
 
         this.sound = new Sound();
         this.initReveal();
-        alert('jow');
+
         this.carouselClients = new Carousel('.carousel-client', 500);
         this.carouselKop = new Carousel('.carousel-kop', 500);
 
