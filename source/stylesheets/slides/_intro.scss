@@ -76,3 +76,11 @@
         transform: rotateY(360deg);
     }
 }
+
+.get-directions {
+    &::before {
+        content: '↗';
+        display: inline;
+        margin-left: .25em;
+    }
+}
