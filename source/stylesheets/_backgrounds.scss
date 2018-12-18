@@ -52,40 +52,6 @@
         }
     }
 
-    &.bg-kavka-shuffle {
-        position: absolute;
-        background-image: url("../assets/images/kavka/kavka-patterns_rounds copy.png");
-        background-color: white;
-        color: #e9512a;
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-image: url("../assets/images/kavka/kavka-patterns_rounds.png");
-            background: white;
-            left: 50px;
-            right: 50px;
-            top: 50px;
-            bottom: 50px;
-        }
-    }
-
-    &.bg-kavka3 {
-        background-color: #ffffff;
-        color: #e9512a;
-
-        &::before {
-            content: "";
-            position: absolute;
-            background: white;
-            background-image: url("../assets/images/kavka/kavka-patterns.png");
-            left: 1em;
-            right: 1em;
-            top: 1em;
-            bottom: 1em;
-        }
-    }
-
     &.bg-mas {
         background-color: #39607a;
         color: #ffffff;
@@ -96,18 +62,8 @@
         color: #ffffff;
     }
 
-    &.bg-karaoke {
-        background-color: #3EC2FF;
-        color: #ffffff;
-    }
-
     &.bg-lifehaks {
         background-color: #ececec;
-        color: #0b0c0a;
-    }
-
-    &.bg-mooimakers {
-        background-color: #FFFEA1;
         color: #0b0c0a;
     }
 
