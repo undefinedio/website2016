@@ -8,6 +8,7 @@ import Game from './canvas/Game';
 
 //import slide specific javascript
 import './slides/explosion.js';
+import './slides/drawing.js';
 
 import Carousel from './helpers/carousel.js';
 

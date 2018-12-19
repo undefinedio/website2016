@@ -7,7 +7,6 @@ import WindowError from './states/WindowError';
 import Like from './states/Like';
 import Clouds from './states/Clouds';
 import Pong from './states/Pong';
-import Drawing from './states/Drawing';
 
 var pjson = require('../../../package.json');
 
@@ -28,7 +27,6 @@ class Game extends Phaser.Game {
         this.state.add('PatternBackground', PatternBackground, false);
         this.state.add('Clouds', Clouds, false);
         this.state.add('Pong', Pong, false);
-        this.state.add('Drawing', Drawing, false);
 
         this.previousState = undefined;
 
