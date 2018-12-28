@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import _ from "lodash";
 
+// drawing on canvas
+
 class Draw {
     constructor() {
         d.on("drawing", () => {
@@ -20,6 +22,7 @@ class Draw {
 
         let lastX = 0;
         let lastY = 0;
+        let isDrawing = false;
 
         $(window).resize(_.debounce(() => {
             canvas.width = $el.width();
@@ -29,20 +32,8 @@ class Draw {
             isDrawing = false;
         }, 100));
 
-        canvas.addEventListener("touchstart", function (e) {
-            const rect = e.target.getBoundingClientRect();
-            const mouseX = e.targetTouches[0].pageX - rect.left;
-            const mouseY = e.targetTouches[0].pageY - rect.top;
-            lastX = mouseX;
-            lastY = mouseY;
-            isDrawing = true;
-        }, false);
-
         canvas.addEventListener("mousemove", function (e) {
-            if (!e) {
-                e = event;
-            }
-
+            console.log(e);
             let mouseX = e.offsetX;
             let mouseY = e.offsetY;
             context.moveTo(lastX, lastY);
@@ -53,6 +44,15 @@ class Draw {
 
             lastX = mouseX;
             lastY = mouseY;
+        }, false);
+
+        canvas.addEventListener("touchstart", function (e) {
+            const rect = e.target.getBoundingClientRect();
+            const mouseX = e.targetTouches[0].pageX - rect.left;
+            const mouseY = e.targetTouches[0].pageY - rect.top;
+            lastX = mouseX;
+            lastY = mouseY;
+            isDrawing = true;
         }, false);
 
         canvas.addEventListener("touchmove", function (e) {

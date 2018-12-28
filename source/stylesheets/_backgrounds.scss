@@ -41,7 +41,7 @@
         background-color: #ffffff;
         color: #e9512a;
 
-        &::before {
+        &::after {
             content: "";
             position: absolute;
             background: white;
@@ -50,6 +50,11 @@
             right: 1em;
             top: 1em;
             bottom: 1em;
+        }
+
+        canvas {
+            position: fixed;
+            z-index: 1000;
         }
     }
 
