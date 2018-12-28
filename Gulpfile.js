@@ -69,9 +69,8 @@ gulp.task("js", function () {
             this.emit('end');
         })
         .pipe(source('main.js'))
-        .pipe(buffer())
-        .pipe(minify())
-        .pipe(uglify())
+        // .pipe(minify())
+        // .pipe(uglify())
         .pipe(gulp.dest(PATHS.assets))
 });
 

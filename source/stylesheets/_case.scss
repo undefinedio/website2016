@@ -38,10 +38,13 @@
     img {
         width: 100%;
         margin-bottom: 0;
+    }
+}
 
-        @include media($intermedium-screen) {
-            width: 100%;
-        }
+.case-mockup-desktop-iphone {
+    img {
+        width: 100%;
+        margin-bottom: 0;
     }
 }
 
@@ -55,11 +58,11 @@
             font-size: 2.5em;
 
             @include media($medium-screen) {
-                font-size: 5em;
+                font-size: 3em;
             }
 
             @include media($large-screen) {
-                font-size: 6em;
+                font-size: 4em;
             }
         }
 
@@ -82,7 +85,8 @@
     }
 
     .case-title,
-    .client-title {
+    .client-title,
+    .project-title {
         font-family: "Space Mono", sans-serif;
         letter-spacing: 1px;
         position: fixed;
@@ -105,10 +109,23 @@
 
     .client-title {
         left: 2em;
+
+        &.link {
+            &::after {
+                content: '↗';
+                display: inline;
+                margin-left: .25em;
+            }
+        }
     }
 
     .case-title {
         right: 2em;
     }
-}
 
+    .project-title {
+        font-weight: bold;
+        right: 50%;
+        left: 50%;
+    }
+}

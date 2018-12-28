@@ -37,22 +37,40 @@
         }
     }
 
-    &.bg-lolology {
-        background-size: 20%;
-        background-origin: content-box, padding-box;
-        color: $white;
-        background: linear-gradient(270deg, #FFFEA1, #3EC2FF, #3FFF3E, #FF683E, #683EFF, #FF3EF7, #3EFFCB, #D1FF00);
-        background-size: 1000% 1000%;
-        animation: gradient 60s ease infinite;
+    &.bg-kavka {
+        background-color: #ffffff;
+        color: #e9512a;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background: white;
+            background-image: url("../assets/images/kavka/kavka-patterns.png");
+            left: 1em;
+            right: 1em;
+            top: 1em;
+            bottom: 1em;
+        }
+
+        canvas {
+            position: fixed;
+            z-index: 1000;
+        }
     }
 
-    &.bg-borninantwerp {
-        color: $white;
-        background-color: #0087C4;
+    &.bg-mas {
+        background-color: #39607a;
+        color: #ffffff;
     }
 
-    &.bg-taalhelden {
-        background-color: #63f5e1;
+    &.bg-goose {
+        background-color: #0a0a0a;
+        color: #ffffff;
+    }
+
+    &.bg-lifehaks {
+        background-color: #ececec;
+        color: #0b0c0a;
     }
 
     &.bg-kop {
