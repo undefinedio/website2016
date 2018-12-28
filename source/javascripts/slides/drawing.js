@@ -1,47 +1,47 @@
 import $ from 'jquery';
 import _ from "lodash";
 
-// drawing on canvas
-
 class Draw {
     constructor() {
-        d.on("drawing", () => {
+        d.on("start-drawing", () => {
             this.drawing();
         });
     }
 
-    drawing (){
-        const $el = $('#game');
-        const $canvas = $el.find('canvas');
+    drawing() {
+        const $canvas = $('#drawing-canvas');
 
         const canvas = $canvas[0];
         const context = canvas.getContext('2d');
 
-        canvas.width = $el.width();
-        canvas.height = $el.height();
+        canvas.width = $canvas.width();
+        canvas.height = $canvas.height();
 
         let lastX = 0;
         let lastY = 0;
         let isDrawing = false;
+        let startDrawing = false;
 
         $(window).resize(_.debounce(() => {
-            canvas.width = $el.width();
-            canvas.height = $el.height();
+            canvas.width = $canvas.width();
+            canvas.height = $canvas.height();
             lastX = 0;
             lastY = 0;
             isDrawing = false;
         }, 100));
 
         canvas.addEventListener("mousemove", function (e) {
-            console.log(e);
             let mouseX = e.offsetX;
             let mouseY = e.offsetY;
-            context.moveTo(lastX, lastY);
-            context.lineTo(mouseX, mouseY);
-            context.strokeStyle = "#e85a36";
-            context.closePath();
-            context.stroke();
 
+            if (lastX !== 0 && lastY !== 0) {
+                context.moveTo(lastX, lastY);
+                context.lineTo(mouseX, mouseY);
+                context.strokeStyle = "#e85a36";
+                context.closePath();
+                context.stroke();
+            }
+            
             lastX = mouseX;
             lastY = mouseY;
         }, false);
@@ -79,7 +79,7 @@ class Draw {
             lastY = mouseY;
 
             e.preventDefault();
-        },false);
+        }, false);
 
         canvas.addEventListener("touchend", function (e) {
             isDrawing = false;
