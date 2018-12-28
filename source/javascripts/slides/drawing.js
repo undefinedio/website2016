@@ -41,7 +41,7 @@ class Draw {
                 context.closePath();
                 context.stroke();
             }
-            
+
             lastX = mouseX;
             lastY = mouseY;
         }, false);
