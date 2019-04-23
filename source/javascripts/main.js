@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Reveal from 'reveal.js/js/reveal'
 
+window.Reveal = Reveal;
+
 import './helpers/events';
 import Sound from './classes/sound';
 import Favicon from './classes/favicon.js';
@@ -35,8 +37,7 @@ class App {
         let keyboard = false,
             history = false;
 
-        window.Reveal = Reveal;
-        this.$slides = $('body');
+        this.$slides = $('.js-slides');
 
         if (this.env) {
             keyboard = true;
@@ -56,7 +57,16 @@ class App {
             transition: 'none',
             hideAddressBar: true,
             overview: false,
-            dependencies: [],
+            dependencies: [
+                {src: 'lib/menu.min.js'}
+            ],
+            menu: {
+                side: 'right',
+                titleSelector: 'span.menu-title',
+                useTextContentForMissingTitles: false,
+                hideMissingTitles: true,
+                markers: false,
+            },
             width: "100%",
             height: "100%",
             margin: 0,
@@ -66,7 +76,13 @@ class App {
     }
 
     eventHandlers() {
-        this.$slides.on('click', e => {
+
+        $(document.body).on('click', '.slide-menu-button', e => {
+            console.log('menu click instead of advance');
+            e.stopImmediatePropagation()
+        });
+
+        $(document.body).on('click', '.js-slides, canvas#drawing-canvas', e => {
             if (!$(e.originalEvent.srcElement).hasClass('js-link') && !$('.present').hasClass('js-disable-click')) {
                 if (global.clicksDisabled) {
                     e.preventDefault();
@@ -79,8 +95,11 @@ class App {
                         global.clicksDisabled = false;
                     }, CLICK_TIMEOUT);
                 }
+            } else {
+                console.log('click disabled');
             }
         });
+
 
         Reveal.addEventListener('ready', event => {
             this.doSlide(event);

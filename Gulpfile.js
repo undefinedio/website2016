@@ -25,6 +25,7 @@ var PATHS = {
     assets: "dist/assets/",
     dist: "dist",
     fonts: "source/fonts/*.*",
+    lib: "source/lib/**/*.*",
     sounds: "source/sounds/*.*",
     images: "source/images/",
     html: "source/templates/",
@@ -84,6 +85,11 @@ gulp.task("sass", function () {
         .pipe(gulp.dest(PATHS.assets))
 });
 
+gulp.task('lib', function () {
+    return gulp.src(PATHS.lib)
+        .pipe(gulp.dest(PATHS.dist + '/lib'));
+});
+
 gulp.task("audio", function () {
     gulp.src(PATHS.sounds)
         .pipe(audiosprite({
@@ -99,7 +105,7 @@ gulp.task("images", function () {
         .pipe(newer(PATHS.assets + 'images'))
         .pipe(imagemin({
             progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
+            svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
         .pipe(gulp.dest(PATHS.assets + 'images'))
@@ -130,4 +136,4 @@ gulp.task('watch-images', ['images'], browserSync.reload);
 gulp.task('watch-fonts', ['fonts'], browserSync.reload);
 
 gulp.task("default", ["build", "connect"]);
-gulp.task("build", ["sass", "js", "images", "html"]);
+gulp.task("build", ["sass", "js", "images", "html", "lib"]);
