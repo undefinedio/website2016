@@ -38,7 +38,6 @@
     }
 
     .slide-menu-toolbar {
-        //display: none !important;
         border-bottom: none !important;
         text-align: right;
 
@@ -55,7 +54,7 @@
                 float: right;
                 margin-right: 30px;
                 margin-top: 15px;
-                transform: scale(1, 0.75);
+                transform: scale(1, .75);
 
                 &::before {
                     font-family: Space Mono, monospace, sans-serif;
@@ -66,7 +65,6 @@
             }
 
         }
-
     }
 
     .slide-menu {
@@ -96,6 +94,5 @@
         font-family: Space Mono, monospace, sans-serif;
         font-size: 1.1em;
     }
-
 }
 
