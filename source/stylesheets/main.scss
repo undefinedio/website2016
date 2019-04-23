@@ -3,9 +3,7 @@
 @import "fonts";
 @import "mixins";
 @import "breakpoints";
-
 @import "reveal";
-
 @import "typography";
 @import "theme";
 @import "backgrounds";
@@ -14,9 +12,7 @@
 @import "carousel";
 @import "video";
 @import "favicons";
-
 @import "case";
-
 // Slides
 @import "slides/intro";
 @import "slides/lology";
@@ -24,3 +20,4 @@
 @import "slides/explosion";
 @import "slides/kop";
 @import "slides/kavka";
+@import "menu-panel";

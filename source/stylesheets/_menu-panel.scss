@@ -1,0 +1,101 @@
+.reveal .slide-menu-button {
+    position: fixed;
+    left: initial !important;
+    bottom: initial !important;
+    z-index: 30;
+    font-size: 24px;
+    top: 30px;
+    right: 30px;
+
+    border-top: 2px solid var(--hamburger-color, black);
+    height: 20px;
+    width: 20px;
+    padding-top: .4rem;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: .38rem;
+        border-top: 2px solid var(--hamburger-color, black);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        border-top: 2px solid var(--hamburger-color, black);
+    }
+
+    .fa-bars {
+        display: none !important;
+    }
+}
+
+.slide-menu-wrapper {
+    font-family: Space Mono, monospace, sans-serif;
+
+    .slide-menu-overlay.active {
+        background: transparent;
+    }
+
+    .slide-menu-toolbar {
+        //display: none !important;
+        border-bottom: none !important;
+        text-align: right;
+
+        .slide-menu-toolbar-label {
+            display: none;
+        }
+
+        li {
+            &:first-child {
+                display: none;
+            }
+
+            .fas.fa-times {
+                float: right;
+                margin-right: 30px;
+                margin-top: 15px;
+                transform: scale(1, 0.75);
+
+                &::before {
+                    font-family: Space Mono, monospace, sans-serif;
+                    font-weight: 100;
+                    font-size: 1.6rem;
+                    content: 'X'
+                }
+            }
+
+        }
+
+    }
+
+    .slide-menu {
+        width: 320px;
+        border-left: 1px solid;
+
+        li {
+            border: none;
+            padding: 1rem;
+        }
+    }
+
+    .slide-menu-items {
+        border-bottom: none !important;
+
+        .slide-menu-item {
+            text-transform: uppercase;
+
+            &.selected {
+                background-color: transparent;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .slide-menu-panel {
+        font-family: Space Mono, monospace, sans-serif;
+        font-size: 1.1em;
+    }
+
+}
+
