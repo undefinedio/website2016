@@ -28,6 +28,7 @@
         "babelify": "^7.3.0",
         "browser-sync": "^2.26.3",
         "browserify": "^13.1.0",
+        "graceful-fs": "4.2.2",
         "gulp": "^3.8.11",
         "gulp-audiosprite": "^1.1.0",
         "gulp-autoprefixer": "^3.1.1",

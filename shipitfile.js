@@ -4,12 +4,12 @@ module.exports = shipit => {
 
     shipit.initConfig({
         default: {
-            deployTo: '/home/undefined/app/weareundefined.be',
+            deployTo: '/var/www/vhosts/weareundefined.be/',
             repositoryUrl: 'https://github.com/undefinedio/website2016',
             workspace: './',
         },
         production: {
-            servers: 'undefined@178.18.136.201',
+            servers: 'undefined@live.plesk.fined.io',
         },
     });
 
