@@ -12,7 +12,7 @@
         "gsap": "^1.20.6",
         "gyronorm": "^2.0.4",
         "howler": "^2.1.1",
-        "jquery": "^3.4.0",
+        "jquery": "^3.5.0",
         "reveal.js": "^3.8.0",
         "reveal.js-menu": "^1.2.0"
     },
